@@ -59,8 +59,8 @@ const catalogos = [
 // Experiencias/proyectos
 const experiencias = [
   { id: 1, imagen: '/images/granito-black-impala.jpg', titulo: 'Cocina Black Impala' },
-  { id: 2, imagen: '/images/granito-tiger-skin.jpeg', titulo: 'Barra Tiger Skin' },
-  { id: 3, imagen: '/images/granito-vayolet.webp', titulo: 'Baño Vayolet' },
+  { id: 2, titulo: 'Barra Tiger Skin', imagen: '/images/granito-tiger-skin.jpeg' },
+  { id: 3, titulo: 'Baño Vayolet', imagen: '/images/granito-vayolet.webp' },
 ];
 
 // Blog
@@ -77,6 +77,16 @@ const showrooms = [
   { id: 3, sucursal: 'Sucursal Norte', empresa: 'Marmolinas Granillos', direccion: 'Av. Granito y Mármol, Esq. con Piedra, Loja', imagen: '/images/granito-black-impala.jpg', maps: '#', cotiza: '#contacto' },
 ];
 
+// Imágenes de alta calidad para el hero
+const heroPinteres = [
+  '/images/cocinalujo_Pinteres.webp',
+  '/images/encimera_Pinteres.webp',
+  '/images/cocina_Pinteres.webp',
+  '/images/lavamanos_Pinteres.webp',
+  '/images/meson_Pinteres.webp',
+  '/images/grifococina_Pinteres.webp',
+];
+
 export default function HomePage() {
   // Hero slider autoplay
   const [heroIndex, setHeroIndex] = useState(0);
@@ -91,17 +101,16 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen w-full bg-white">
-      {/* HERO SLIDER */}
+      {/* HERO SLIDER con imágenes Pinteres */}
       <HeroSection
-        imagen={heroSlides[0].imagen}
+        imagen={heroPinteres[heroIndex]}
         titulo={heroSlides[0].titulo}
         subtitulo={heroSlides[0].subtitulo}
         botonTexto={heroSlides[0].cta}
         botonHref={heroSlides[0].href}
       />
-
       {/* PARALLAX/IMAGEN FIJA */}
-      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/hero-2-marmolinas.jpg')" }} />
+      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/imagen fija.webp')" }} />
 
       {/* QUIÉNES SOMOS Y PROMOCIONES */}
       <section className="w-full py-20 bg-[#f7f7f7]">

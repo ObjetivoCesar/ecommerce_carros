@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
-import React, { useEffect, useRef } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { HeroSection } from '@/components/hero-section';
@@ -37,7 +37,23 @@ const categorias2 = [
   { id: 2, nombre: "Accesorios de Instalación", imagen: "/images/brocas-diamantadas.webp", descripcion: "Todo para un acabado profesional." },
 ]
 
+const heroPinteres = [
+  '/images/cocinalujo_Pinteres.webp',
+  '/images/encimera_Pinteres.webp',
+  '/images/cocina_Pinteres.webp',
+  '/images/lavamanos_Pinteres.webp',
+  '/images/meson_Pinteres.webp',
+  '/images/grifococina_Pinteres.webp',
+];
+
 export default function ServicesPage() {
+  const [heroIndex, setHeroIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroPinteres.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   // Autoplay para el carrusel de ofertas
   const ofertasApiRef = useRef<CarouselApi | null>(null)
   useEffect(() => {
@@ -51,14 +67,17 @@ export default function ServicesPage() {
 
   return (
     <div className="w-full bg-white">
-      {/* HERO */}
       <HeroSection
-        imagen="/images/hero-portada-marmolina.jpg"
+        imagen={heroPinteres[heroIndex]}
         titulo={<>Transforma tus espacios con Granito y Marmolinas</>}
         subtitulo={<>Calidad, elegancia y garantía para tu hogar o negocio</>}
         botonTexto="Cotiza Ahora"
         botonHref="#contacto"
+        overlayClassName="bg-black/40"
       />
+
+      {/* Justo después del HeroSection, agrega la imagen fija sin overlay ni texto */}
+      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/imagen fija.webp')" }} />
 
       {/* CARDS DE SERVICIOS */}
       <section className="w-full py-8 bg-gray-50">

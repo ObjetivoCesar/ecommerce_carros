@@ -49,11 +49,6 @@ export function Footer() {
                   Productos
                 </Link>
               </li>
-              <li>
-                <Link href="#contacto" className="text-gray-300 hover:text-marmolinas-yellow transition-colors">
-                  Contacto
-                </Link>
-              </li>
             </ul>
           </div>
 

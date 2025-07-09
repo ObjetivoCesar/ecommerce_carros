@@ -12,6 +12,7 @@ interface HeroSectionProps {
   botonColorClass?: string;
   overlayClassName?: string;
   heightClassName?: string;
+  children?: React.ReactNode;
 }
 
 export function HeroSection({
@@ -23,6 +24,7 @@ export function HeroSection({
   botonColorClass = 'bg-marmolinas-yellow text-marmolinas-blue hover:bg-marmolinas-yellow/90',
   overlayClassName = 'bg-black/40',
   heightClassName = 'h-[60vh] min-h-[400px] max-h-[600px]',
+  children,
 }: HeroSectionProps) {
   return (
     <section className={`relative w-full ${heightClassName} flex items-center justify-center overflow-hidden`}>
@@ -36,6 +38,7 @@ export function HeroSection({
             <Link href={botonHref}>{botonTexto}</Link>
           </Button>
         )}
+        {children}
       </div>
     </section>
   );
