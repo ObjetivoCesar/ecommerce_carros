@@ -1,288 +1,299 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Star, Phone, MapPin, Mail } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+'use client'
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
+import { Star, Phone, MapPin, Mail } from 'lucide-react';
+import { HeroSection } from '@/components/hero-section';
+
+// Hero slides
+const heroSlides = [
+  {
+    imagen: '/images/hero-portada-marmolina.jpg',
+    titulo: 'El Mejor Granito y Cuarzo para tu Proyecto',
+    subtitulo: 'Transforma tu espacio con Marmolinas Granillos',
+    cta: 'Cotiza Ahora',
+    href: '#contacto',
+  },
+  {
+    imagen: '/images/hero-2-marmolinas.jpg',
+    titulo: 'Ambientes Modernos y Elegantes',
+    subtitulo: 'Materiales de alta calidad para tu hogar o negocio',
+    cta: 'Ver Productos',
+    href: '/productos',
+  },
+  {
+    imagen: '/images/fachaletas-de-piedra.jpeg',
+    titulo: 'Fachaletas Decorativas',
+    subtitulo: 'Dale un nuevo look a tus paredes',
+    cta: 'Ver Fachaletas',
+    href: '/productos/fachaletas-piedra',
+  },
+];
+
+// Promociones
+const promociones = [
+  { id: 1, titulo: 'Descuento en Granito Tiger Skin', descripcion: 'Aprovecha 10% de descuento en tu compra', imagen: '/images/granito-tiger-skin.jpeg', href: '/productos/granito-tiger-skin' },
+  { id: 2, titulo: 'Brocas Diamantadas en Oferta', descripcion: 'Herramientas profesionales a precio especial', imagen: '/images/brocas-diamantadas.webp', href: '/productos/brocas-diamantadas' },
+];
+
+// Ambientes/productos destacados
+const ambientes = [
+  { id: 1, titulo: 'Cocinas de Granito', imagen: '/images/hero-portada-marmolina.jpg', href: '/productos/granito-tiger-skin' },
+  { id: 2, titulo: 'Baños Modernos', imagen: '/images/granito-vayolet.webp', href: '/productos/granito-vayolet' },
+  { id: 3, titulo: 'Fachaletas Decorativas', imagen: '/images/fachaletas-de-piedra.jpeg', href: '/productos/fachaletas-piedra' },
+];
+
+// Catálogos
+const catalogos = [
+  { id: 1, titulo: 'Catálogo General', imagen: '/images/hero-2-marmolinas.jpg', disponible: false },
+  { id: 2, titulo: 'Catálogo de Fachaletas', imagen: '/images/fachaletas-de-piedra.jpeg', disponible: false },
+  { id: 3, titulo: 'Catálogo de Cuarzos', imagen: '/images/granito-vayolet.webp', disponible: false },
+];
+
+// Experiencias/proyectos
+const experiencias = [
+  { id: 1, imagen: '/images/granito-black-impala.jpg', titulo: 'Cocina Black Impala' },
+  { id: 2, imagen: '/images/granito-tiger-skin.jpeg', titulo: 'Barra Tiger Skin' },
+  { id: 3, imagen: '/images/granito-vayolet.webp', titulo: 'Baño Vayolet' },
+];
+
+// Blog
+const blog = [
+  { id: 1, titulo: 'Cómo elegir el mejor granito', resumen: 'Consejos para seleccionar el granito ideal para tu proyecto.', imagen: '/images/granito-tiger-skin.jpeg' },
+  { id: 2, titulo: 'Tendencias en cocinas modernas', resumen: 'Descubre los estilos más actuales en cocinas.', imagen: '/images/hero-portada-marmolina.jpg' },
+  { id: 3, titulo: 'Ventajas del cuarzo', resumen: 'Por qué el cuarzo es una excelente opción.', imagen: '/images/granito-vayolet.webp' },
+];
+
+// Showrooms
+const showrooms = [
+  { id: 1, sucursal: 'Sucursal Centro', empresa: 'Marmolinas Granillos', direccion: 'Av. Emiliano Ortega 195-05, Loja', imagen: '/images/hero-portada-marmolina.jpg', maps: 'https://goo.gl/maps/...', cotiza: '#contacto' },
+  { id: 2, sucursal: 'Sucursal Sur', empresa: 'Marmolinas Granillos', direccion: 'Av. Loja Sur y Principal, Loja', imagen: '/images/hero-2-marmolinas.jpg', maps: '#', cotiza: '#contacto' },
+  { id: 3, sucursal: 'Sucursal Norte', empresa: 'Marmolinas Granillos', direccion: 'Av. Granito y Mármol, Esq. con Piedra, Loja', imagen: '/images/granito-black-impala.jpg', maps: '#', cotiza: '#contacto' },
+];
 
 export default function HomePage() {
-  const whatsappUrl = "https://wa.me/593986223966"
-
-  const materiales = [
-    {
-      id: "tiger-skin",
-      nombre: "Granito Tiger Skin",
-      imagen: "/images/granito-tiger-skin.jpeg",
-      descripcion: "Granito con vetas doradas y negras, perfecto para cocinas elegantes",
-      href: "/productos/granito-tiger-skin",
-    },
-    {
-      id: "vayolet",
-      nombre: "Granito Vayolet",
-      imagen: "/images/granito-vayolet.webp",
-      descripcion: "Granito con tonos violáceos únicos, ideal para espacios modernos",
-      href: "/productos/granito-vayolet",
-    },
-    {
-      id: "black-impala",
-      nombre: "Granito Black Impala",
-      imagen: "/images/granito-black-impala.jpg",
-      descripcion: "Granito negro clásico con puntos brillantes, elegancia atemporal",
-      href: "/productos/granito-black-impala",
-    },
-    {
-      id: "discos-diamantados",
-      nombre: "Discos Diamantados",
-      imagen: "/images/discos-diamantados.webp",
-      descripcion: "Herramientas profesionales para corte de piedra natural",
-      href: "/productos/discos-diamantados",
-    },
-    {
-      id: "brocas-diamantadas",
-      nombre: "Brocas Diamantadas",
-      imagen: "/images/brocas-diamantadas.webp",
-      descripcion: "Brocas especializadas para perforación en materiales duros",
-      href: "/productos/brocas-diamantadas",
-    },
-    {
-      id: "fachaletas-piedra",
-      nombre: "Fachaletas de Piedra",
-      imagen: "/images/fachaletas-de-piedra.jpeg",
-      descripcion: "Revestimientos decorativos para paredes exteriores e interiores",
-      href: "/productos/fachaletas-piedra",
-    },
-  ]
-
-  const testimonios = [
-    {
-      nombre: "María González",
-      imagen: "/images/maria-gonzalez.webp",
-      testimonio:
-        "Excelente trabajo en mi cocina. El granito Tiger Skin quedó perfecto y el servicio fue muy profesional.",
-      rating: 5,
-    },
-    {
-      nombre: "Carlos Mendoza",
-      imagen: "/images/Carlos Mendoza.jpeg",
-      testimonio: "Muy satisfecho con la instalación del cuarzo en mi baño. Calidad excepcional y precio justo.",
-      rating: 5,
-    },
-    {
-      nombre: "Ana Rodríguez",
-      imagen: "/images/Ana Rodríguez.webp",
-      testimonio: "El equipo de Marmolinas es muy profesional. Cumplieron con los tiempos y la calidad es excelente.",
-      rating: 5,
-    },
-  ]
+  // Hero slider autoplay
+  const [heroIndex, setHeroIndex] = useState(0);
+  const heroApiRef = useRef<CarouselApi | null>(null);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+      if (heroApiRef.current) heroApiRef.current.scrollNext();
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        <Image
-          src="/images/hero-portada-marmolina.jpg"
-          alt="Cocina con granito de Marmolinas Granillos"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            El Mejor Granito Y Cuarzo Para Tu Cocina, Al Precio Ideal
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100">Desde Loja para todo Ecuador</p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-marmolinas-yellow text-marmolinas-blue hover:bg-marmolinas-yellow/90 font-semibold text-lg px-8 py-3"
-          >
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              Cotiza por WhatsApp
-            </a>
-          </Button>
-        </div>
-      </section>
+    <div className="min-h-screen w-full bg-white">
+      {/* HERO SLIDER */}
+      <HeroSection
+        imagen={heroSlides[0].imagen}
+        titulo={heroSlides[0].titulo}
+        subtitulo={heroSlides[0].subtitulo}
+        botonTexto={heroSlides[0].cta}
+        botonHref={heroSlides[0].href}
+      />
 
-      {/* Video Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-marmolinas-blue mb-8">Conoce Nuestro Proceso</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.youtube.com/embed/iobKB3_st6g"
-                title="Proceso de instalación Marmolinas Granillos"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+      {/* PARALLAX/IMAGEN FIJA */}
+      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/hero-2-marmolinas.jpg')" }} />
+
+      {/* QUIÉNES SOMOS Y PROMOCIONES */}
+      <section className="w-full py-20 bg-[#f7f7f7]">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
+          {/* Texto */}
+          <div className="flex-1 flex flex-col justify-center items-start md:items-start">
+            <h2 className="text-5xl md:text-6xl font-bold text-marmolinas-blue mb-6 leading-tight">QUIÉNES<br/>SOMOS</h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-lg">Marmolinas Granillos es una empresa familiar con legado y visión, especializada en la venta e instalación de granito, cuarzo y mármol. Brindamos productos de primera categoría a precios competitivos, cumpliendo siempre las expectativas de nuestros clientes.<br/><br/>Somos importadores y distribuidores directos de piedra natural y decorativa en Ecuador.</p>
+            <Button asChild className="bg-marmolinas-yellow text-marmolinas-blue font-bold px-8 py-3 rounded-full text-base shadow-lg">
+              <Link href="/servicios">Ver más</Link>
+            </Button>
+          </div>
+          {/* Imágenes */}
+          <div className="flex-1 flex justify-center items-center relative min-h-[350px]">
+            <div className="relative w-[340px] h-[340px] rounded-xl overflow-hidden shadow-lg">
+              <Image src="/images/hero-portada-marmolina.jpg" alt="Ambiente Marmolinas" fill className="object-cover" />
             </div>
-            <p className="mt-6 text-gray-600 text-lg">
-              Descubre cómo transformamos espacios con nuestros materiales de alta calidad y técnicas de instalación
-              profesional. Cada proyecto es único y está diseñado para superar tus expectativas.
-            </p>
+            <div className="absolute left-[-40px] bottom-[-40px] w-[180px] h-[140px] rounded-xl overflow-hidden shadow-lg border-4 border-white hidden md:block">
+              <Image src="/images/fachaletas-de-piedra.jpeg" alt="Ambiente Decorativo" fill className="object-cover" />
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Materials and Services Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-marmolinas-blue mb-12">
-            Nuestros Materiales y Servicios
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {materiales.map((material) => (
-              <Card key={material.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video relative">
-                  <Image
-                    src={material.imagen || "/placeholder.svg"}
-                    alt={material.nombre}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-marmolinas-blue">{material.nombre}</CardTitle>
-                  <CardDescription>{material.descripcion}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button asChild className="w-full">
-                    <Link href={material.href}>Ver Detalles</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-marmolinas-blue mb-12">
-            Lo Que Dicen Nuestros Clientes
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonios.map((testimonio, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="relative mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full">
-                    <Image
-                      src={testimonio.imagen || "/placeholder.svg"}
-                      alt={testimonio.nombre}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
-                  <CardTitle className="text-lg">{testimonio.nombre}</CardTitle>
-                  <div className="flex justify-center space-x-1">
-                    {[...Array(testimonio.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-marmolinas-yellow text-marmolinas-yellow" />
-                    ))}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 italic">"{testimonio.testimonio}"</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contacto" className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-marmolinas-blue mb-12">Cotiza Ahora</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card>
+      {/* PROMOCIONES */}
+      <section className="w-full py-12 bg-white">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {promociones.map((promo) => (
+            <Card key={promo.id} className="overflow-hidden">
+              <div className="relative w-full h-40">
+                <Image src={promo.imagen} alt={promo.titulo} fill className="object-cover" />
+              </div>
               <CardHeader>
-                <CardTitle>Solicita tu Cotización</CardTitle>
-                <CardDescription>Completa el formulario y nos pondremos en contacto contigo</CardDescription>
+                <CardTitle className="text-marmolinas-blue text-lg text-center">{promo.titulo}</CardTitle>
+                <CardDescription className="text-gray-600 text-sm text-center">{promo.descripcion}</CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
-                  <div>
-                    <Label htmlFor="nombre">Nombre completo</Label>
-                    <Input id="nombre" placeholder="Tu nombre completo" />
-                  </div>
-                  <div>
-                    <Label htmlFor="whatsapp">WhatsApp</Label>
-                    <Input id="whatsapp" placeholder="593986223966" />
-                  </div>
-                  <div>
-                    <Label htmlFor="mensaje">Mensaje</Label>
-                    <Textarea id="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows={4} />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-marmolinas-yellow text-marmolinas-blue hover:bg-marmolinas-yellow/90"
-                  >
-                    Enviar Solicitud
-                  </Button>
-                </form>
+                <Button asChild className="bg-marmolinas-blue text-white w-full rounded-full">
+                  <Link href={promo.href}>Ver Oferta</Link>
+                </Button>
               </CardContent>
             </Card>
+          ))}
+        </div>
+      </section>
 
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <Card>
+      {/* CARDS DE AMBIENTES/PRODUCTOS DESTACADOS */}
+      <section className="w-full py-16 bg-gray-50">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          {ambientes.map((amb) => (
+            <Card key={amb.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="relative w-full h-64">
+                <Image src={amb.imagen} alt={amb.titulo} fill className="object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="text-marmolinas-blue text-xl">{amb.titulo}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Button asChild className="bg-marmolinas-yellow text-marmolinas-blue w-full font-bold">
+                  <Link href={amb.href}>Ver más</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* CATÁLOGOS */}
+      <section className="w-full py-16 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-marmolinas-blue mb-8 text-center">Catálogos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {catalogos.map((cat) => (
+              <Card key={cat.id} className="overflow-hidden flex flex-col items-center">
+                <div className="relative w-full h-48">
+                  <Image src={cat.imagen} alt={cat.titulo} fill className="object-cover" />
+                </div>
                 <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-marmolinas-blue" />
-                    <span>Nuestra Ubicación</span>
-                  </CardTitle>
+                  <CardTitle className="text-marmolinas-blue text-lg text-center">{cat.titulo}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    Av. Emiliano Ortega 195-05 entre Imbabura y Colón
-                    <br />
-                    Loja, Ecuador
-                  </p>
-                  <div className="aspect-video rounded-lg overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8!2d-79.2!3d-4.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDAnMDAuMCJTIDc5wrAxMicwMC4wIlc!5e0!3m2!1ses!2sec!4v1234567890"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
-                  </div>
+                <CardContent className="w-full flex justify-center">
+                  <Button disabled={!cat.disponible} className="bg-marmolinas-yellow text-marmolinas-blue font-bold px-6 py-2">
+                    {cat.disponible ? 'Descargar' : 'Próximamente'}
+                  </Button>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Card>
-                  <CardContent className="flex items-center space-x-3 p-6">
-                    <Phone className="h-8 w-8 text-marmolinas-blue" />
-                    <div>
-                      <p className="font-semibold">Teléfono</p>
-                      <p className="text-gray-600">+593 98 622 3966</p>
+      {/* EXPERIENCIAS/PROYECTOS */}
+      <section className="w-full py-16 bg-gray-50">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-marmolinas-blue mb-8 text-center">Experiencias</h2>
+          <Carousel opts={{ loop: true }}>
+            <CarouselContent>
+              {experiencias.map((exp, idx) => (
+                <CarouselItem key={exp.id} className="basis-1/1 md:basis-1/2 lg:basis-1/3 px-2">
+                  <Card className="overflow-hidden">
+                    <div className="relative w-full h-64">
+                      <Image src={exp.imagen} alt={exp.titulo} fill className="object-cover" />
                     </div>
-                  </CardContent>
-                </Card>
+                    <CardHeader>
+                      <CardTitle className="text-marmolinas-blue text-lg">{exp.titulo}</CardTitle>
+                    </CardHeader>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
 
-                <Card>
-                  <CardContent className="flex items-center space-x-3 p-6">
-                    <Mail className="h-8 w-8 text-marmolinas-blue" />
-                    <div>
-                      <p className="font-semibold">Email</p>
-                      <p className="text-gray-600">info@marmolinasgranillos.com</p>
-                    </div>
-                  </CardContent>
-                </Card>
+      {/* VIDEO INFORMATIVO */}
+      <section className="w-full py-20 bg-white">
+        <div className="container mx-auto flex flex-col items-center justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-marmolinas-blue text-center mb-8 max-w-2xl mx-auto">
+            ¿Por qué contratar una empresa con experiencia es el mejor paso para vivir en un hogar sin problemas toda la vida?
+          </h2>
+          <div className="w-full max-w-3xl aspect-video rounded-xl overflow-hidden shadow-lg mb-4">
+            <iframe
+              src="https://www.youtube.com/embed/iobKB3_st6g"
+              title="Por qué Marmolinas Granillos"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* BLOG */}
+      <section className="w-full py-16 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-marmolinas-blue mb-8 text-center">Blog</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blog.slice(0, 3).map((art) => (
+              <Card key={art.id} className="overflow-hidden h-80 flex flex-col">
+                <div className="relative w-full h-48">
+                  <Image src={art.imagen} alt={art.titulo} fill className="object-cover" />
+                </div>
+                <CardHeader className="flex-1 flex flex-col justify-between">
+                  <CardTitle className="text-marmolinas-blue text-lg text-center">{art.titulo}</CardTitle>
+                  <CardDescription className="text-gray-600 text-sm text-center">{art.resumen}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild className="bg-marmolinas-blue text-white w-full rounded-full">
+                    <Link href="#">Leer más</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SHOWROOMS */}
+      <section className="w-full py-16 bg-gray-50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-marmolinas-blue mb-8 text-center">SHOWROOMS</h2>
+          <p className="text-center text-gray-600 mb-8">Encuentra tu espacio ideal</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {showrooms.map((show) => (
+              <div key={show.id} className="relative rounded-xl overflow-hidden shadow-lg flex flex-col justify-between min-h-[500px] max-w-xs mx-auto" style={{ aspectRatio: '3/5' }}>
+                <Image src={show.imagen} alt={show.sucursal} fill className="object-cover" />
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute top-6 left-0 w-full px-6">
+                  <h3 className="text-white text-2xl font-bold drop-shadow text-left">
+                    {show.empresa} <span className="font-light">{show.sucursal}</span>
+                  </h3>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full px-6 pb-6 flex flex-col items-center">
+                  <div className="flex items-center mb-3">
+                    <span className="text-white text-xl mr-2">📍</span>
+                    <span className="text-white text-base drop-shadow">{show.direccion}</span>
+                  </div>
+                  <div className="flex gap-3 w-full">
+                    <Button asChild className="bg-gray-300 text-gray-800 font-bold flex-1 rounded-full" size="sm">
+                      <Link href={show.maps} target="_blank">Ver mapa</Link>
+                    </Button>
+                    <Button asChild className="bg-black text-white font-bold flex-1 rounded-full" size="sm">
+                      <Link href={show.cotiza}>Cotiza</Link>
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
