@@ -37,9 +37,18 @@ export function Header() {
               <Link href="/" className="text-gray-700 hover:text-marmolinas-blue transition-colors">
                 Inicio
               </Link>
-              <Link href="/servicios" className="text-gray-700 hover:text-marmolinas-blue transition-colors">
-                Servicios
-              </Link>
+              <div className="relative group">
+                <Link href="/servicios" className="text-gray-700 hover:text-marmolinas-blue transition-colors flex items-center">
+                  Servicios
+                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </Link>
+                <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50 border border-gray-100 pt-2"
+                  onMouseEnter={undefined} onMouseLeave={undefined}>
+                  <Link href="/servicios/venta-instalacion" className="block px-4 py-3 text-marmolinas-blue hover:bg-marmolinas-yellow hover:text-marmolinas-blue transition-colors">Venta e Instalación</Link>
+                  <Link href="/servicios/pulido-restauracion" className="block px-4 py-3 text-marmolinas-blue hover:bg-marmolinas-yellow hover:text-marmolinas-blue transition-colors">Pulido y Restauración</Link>
+                  <Link href="/servicios/resina-fibra" className="block px-4 py-3 text-marmolinas-blue hover:bg-marmolinas-yellow hover:text-marmolinas-blue transition-colors">Resina y Fibra de Vidrio</Link>
+                </div>
+              </div>
               <Link href="/productos" className="text-gray-700 hover:text-marmolinas-blue transition-colors">
                 Productos
               </Link>
@@ -83,13 +92,23 @@ export function Header() {
                 >
                   Inicio
                 </Link>
-                <Link
-                  href="/servicios"
-                  className="text-gray-700 hover:text-marmolinas-blue transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Servicios
-                </Link>
+                <div>
+                  <button
+                    className="w-full text-left text-gray-700 hover:text-marmolinas-blue transition-colors py-2 flex items-center justify-between"
+                    onClick={() => setIsMenuOpen(false)}
+                    type="button"
+                  >
+                    Servicios
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  {isMenuOpen && (
+                    <div className="pl-4 flex flex-col space-y-1">
+                      <Link href="/servicios/venta-instalacion" className="block py-2 text-marmolinas-blue hover:bg-marmolinas-yellow hover:text-marmolinas-blue rounded transition-colors" onClick={() => setIsMenuOpen(false)}>Venta e Instalación</Link>
+                      <Link href="/servicios/pulido-restauracion" className="block py-2 text-marmolinas-blue hover:bg-marmolinas-yellow hover:text-marmolinas-blue rounded transition-colors" onClick={() => setIsMenuOpen(false)}>Pulido y Restauración</Link>
+                      <Link href="/servicios/resina-fibra" className="block py-2 text-marmolinas-blue hover:bg-marmolinas-yellow hover:text-marmolinas-blue rounded transition-colors" onClick={() => setIsMenuOpen(false)}>Resina y Fibra de Vidrio</Link>
+                    </div>
+                  )}
+                </div>
                 <Link
                   href="/productos"
                   className="text-gray-700 hover:text-marmolinas-blue transition-colors py-2"
