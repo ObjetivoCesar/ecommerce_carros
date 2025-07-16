@@ -26,7 +26,6 @@ export function CartWidget({ isOpen, onClose }: CartWidgetProps) {
     whatsapp: "",
     mensaje: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const updateQuantity = (id: string, newQuantity: number) => {
     dispatch({ type: "UPDATE_QUANTITY", payload: { id, cantidad: newQuantity } })
@@ -189,9 +188,18 @@ export function CartWidget({ isOpen, onClose }: CartWidgetProps) {
                 <Button
                   type="submit"
                   className="w-full bg-marmolinas-yellow text-marmolinas-blue hover:bg-marmolinas-yellow/90"
-                  disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Enviando..." : "Enviar Pedido"}
+                  Enviar Pedido
+                </Button>
+                <Button
+                  type="button"
+                  className="w-full mt-2 bg-marmolinas-blue text-white hover:bg-marmolinas-blue/90"
+                  onClick={() => toast({
+                    title: "Próximamente",
+                    description: "La opción de pago con tarjeta estará disponible muy pronto.",
+                  })}
+                >
+                  Pagar con tarjeta
                 </Button>
               </form>
             </div>

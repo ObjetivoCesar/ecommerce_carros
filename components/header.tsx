@@ -52,6 +52,9 @@ export function Header() {
               <Link href="/productos" className="text-gray-700 hover:text-marmolinas-blue transition-colors">
                 Productos
               </Link>
+              <Link href="/blog" className="text-gray-700 hover:text-marmolinas-blue transition-colors">
+                Blog
+              </Link>
             </nav>
 
             {/* Right side buttons */}
@@ -115,6 +118,13 @@ export function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Productos
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-gray-700 hover:text-marmolinas-blue transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
                 </Link>
               </nav>
             </div>

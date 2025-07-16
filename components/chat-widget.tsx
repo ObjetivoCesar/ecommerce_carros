@@ -31,7 +31,7 @@ export function ChatWidget() {
 
     if (savedMessages) {
       try {
-        const parsedMessages = JSON.parse(savedMessages).map((msg: any) => ({
+        const parsedMessages = JSON.parse(savedMessages).map((msg: { id: string; text: string; sender: "user" | "bot"; timestamp: string }) => ({
           ...msg,
           timestamp: new Date(msg.timestamp),
         }))
