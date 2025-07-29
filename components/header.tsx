@@ -64,7 +64,7 @@ export function Header() {
                   onMouseEnter={undefined} onMouseLeave={undefined}>
                   <Link href="/servicios/mantenimiento" className="block px-4 py-3 text-white hover:bg-[#fa6704] hover:text-white transition-colors">Mantenimiento</Link>
                   <Link href="/servicios/financiamiento" className="block px-4 py-3 text-white hover:bg-[#fa6704] hover:text-white transition-colors">Financiamiento</Link>
-                  <Link href="/servicios/tramites" className="block px-4 py-3 text-white hover:bg-[#fa6704] hover:text-white transition-colors">Trámites</Link>
+                  <Link href="/servicios/estado-cuenta" className="block px-4 py-3 text-white hover:bg-[#fa6704] hover:text-white transition-colors">Estado de Cuenta</Link>
                 </div>
               </div>
               <Link href="/productos" className="text-white hover:text-[#fa6704] transition-colors">
@@ -134,7 +134,7 @@ export function Header() {
                   <div className="pl-4 flex flex-col space-y-1 mt-1">
                     <Link href="/servicios/mantenimiento" className="block py-2 text-gray-300 hover:text-white hover:bg-[#fa6704]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Mantenimiento</Link>
                     <Link href="/servicios/financiamiento" className="block py-2 text-gray-300 hover:text-white hover:bg-[#fa6704]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Financiamiento</Link>
-                    <Link href="/servicios/tramites" className="block py-2 text-gray-300 hover:text-white hover:bg-[#fa6704]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Trámites</Link>
+                    <Link href="/servicios/estado-cuenta" className="block py-2 text-gray-300 hover:text-white hover:bg-[#fa6704]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Estado de Cuenta</Link>
                   </div>
                 </div>
                 <Link

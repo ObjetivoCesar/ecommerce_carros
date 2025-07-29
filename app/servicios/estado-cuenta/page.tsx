@@ -1,0 +1,338 @@
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { 
+  ArrowRight, 
+  Calendar, 
+  CheckCircle, 
+  CheckCircle2, 
+  CreditCard, 
+  FileText, 
+  FileDown, 
+  Users, 
+  Clock, 
+  Calculator, 
+  Shield, 
+  Phone, 
+  Percent,
+  Zap,
+  FileSearch,
+  DollarSign,
+  TrendingUp,
+  History,
+  Car
+} from 'lucide-react'
+
+// Definición de tipos para TypeScript
+type EstadoCuenta = {
+  id: number;
+  titulo: string;
+  descripcion: string;
+  fecha: string;
+  monto: string;
+  estado: string;
+  detalles: string[];
+  icon: React.ReactNode;
+  bgImage: string;
+};
+
+type EstadosPorTipo = {
+  [key: string]: EstadoCuenta[];
+};
+
+export default function EstadoCuentaPage() {
+  const [activeTab, setActiveTab] = useState('activos')
+
+  const estados: EstadosPorTipo = {
+    activos: [
+      {
+        id: 1,
+        titulo: "Crédito Automotriz",
+        descripcion: "Seguimiento de tu financiamiento vehicular",
+        fecha: "15/07/2025 - 15/07/2026",
+        monto: "$12,450.00",
+        estado: "Al día",
+        detalles: [
+          "Monto inicial: $18,000.00",
+          "Cuotas restantes: 10 de 24",
+          "Próximo pago: 15/08/2025",
+          "Tasa de interés: 9.5% anual"
+        ],
+        icon: <Car className="h-10 w-10 text-[#fa6704]" />,
+        bgImage: '/images/estado_de_cuenta3.jpg',
+      },
+      {
+        id: 2,
+        titulo: "Tarjeta de Crédito Oro",
+        descripcion: "Resumen de movimientos y estado actual",
+        fecha: "01/07/2025 - 31/07/2025",
+        monto: "$2,785.50",
+        estado: "Pendiente de pago",
+        detalles: [
+          "Límite de crédito: $12,000.00",
+          "Disponible: $9,214.50",
+          "Fecha de corte: 25/07/2025",
+          "Pago mínimo: $1,100.00"
+        ],
+        icon: <CreditCard className="h-10 w-10 text-[#fa6704]" />,
+        bgImage: '/images/tarjeta_Credito2.jpg',
+      },
+    ],
+    historial: [
+      {
+        id: 3,
+        titulo: "Crédito Personal",
+        descripcion: "Crédito personal cancelado",
+        fecha: "15/01/2024 - 15/06/2025",
+        monto: "$0.00",
+        estado: "Pagado",
+        detalles: [
+          "Monto inicial: $10,000.00",
+          "Cuotas: 18",
+          "Fecha de pago final: 15/06/2025",
+          "Tasa de interés: 11.5% anual"
+        ],
+        icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
+        bgImage: '/images/estado_de_cuenta3.jpg',
+      },
+    ]
+  };
+
+  const beneficios = [
+    {
+      icono: Clock,
+      titulo: "Consulta Rápida",
+      descripcion: "Accede a tu estado de cuenta en cualquier momento"
+    },
+    {
+      icono: FileSearch,
+      titulo: "Detallado",
+      descripcion: "Visualiza todos los movimientos y transacciones"
+    },
+    {
+      icono: TrendingUp,
+      titulo: "Seguimiento",
+      descripcion: "Monitorea el progreso de tus créditos"
+    },
+    {
+      icono: History,
+      titulo: "Historial",
+      descripcion: "Revisa tus estados de cuenta anteriores"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative bg-gray-900 text-white py-20 md:py-32 min-h-[500px] flex items-center">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/estado_cuenta.jpg"
+              alt="Estado de Cuenta"
+              fill
+              className="object-cover"
+              style={{
+                opacity: 0.5,
+                objectPosition: 'center center',
+                height: '100%',
+                width: '100%',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                minHeight: '100%',
+                minWidth: '100%',
+                maxWidth: 'none',
+                maxHeight: 'none',
+                objectFit: 'cover'
+              }}
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
+                Estado de Cuenta
+              </h1>
+              <p className="text-xl mb-10 text-gray-100 font-medium leading-relaxed max-w-2xl">
+                Consulta el estado de tus créditos, tarjetas y productos financieros de manera rápida y segura. 
+                Todo en un solo lugar, actualizado en tiempo real.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <FileText className="mr-2 h-5 w-5" />
+                  Consultar Ahora
+                </Button>
+                <Button 
+                  variant="outline"
+                  size="lg" 
+                  className="border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-base"
+                >
+                  <FileDown className="mr-2 h-5 w-5" />
+                  Descargar Estados
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sección de Estados de Cuenta */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Tus Estados de Cuenta</h2>
+            <p className="text-gray-600 text-lg">
+              Revisa el estado actual de tus productos financieros y créditos
+            </p>
+          </div>
+
+          {/* Tabs de Navegación */}
+          <div className="flex justify-center mb-12">
+            <Tabs 
+              value={activeTab} 
+              onValueChange={setActiveTab}
+              className="w-full max-w-4xl"
+            >
+              <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
+                <TabsTrigger value="activos" className="py-3">
+                  <FileText className="h-5 w-5 mr-2" />
+                  Activos
+                </TabsTrigger>
+                <TabsTrigger value="historial" className="py-3">
+                  <History className="h-5 w-5 mr-2" />
+                  Historial
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+
+          {/* Grid de Estados de Cuenta */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {estados[activeTab].map((estado) => (
+              <Card key={estado.id} className="overflow-hidden group transition-all duration-300 hover:shadow-xl">
+                <div className="relative h-48">
+                  <Image
+                    src={estado.bgImage}
+                    alt={estado.titulo}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  <div className="absolute top-4 right-4">
+                    <span className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                      estado.estado === 'Al día' ? 'bg-green-100 text-green-800' :
+                      estado.estado === 'Pendiente de pago' ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-blue-100 text-blue-800'
+                    }`}>
+                      {estado.estado}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    {estado.icon}
+                    <div>
+                      <h3 className="text-xl font-bold text-white">{estado.titulo}</h3>
+                      <p className="text-gray-200">{estado.descripcion}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+                      <p className="text-sm text-gray-300">Período</p>
+                      <p className="font-semibold text-white">{estado.fecha}</p>
+                    </div>
+                    <div className="bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+                      <p className="text-sm text-gray-300">Monto</p>
+                      <p className="font-semibold text-white">{estado.monto}</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-2 text-white">Detalles:</h4>
+                    <ul className="space-y-2">
+                      {estado.detalles.map((detalle, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <CheckCircle2 className="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-200">{detalle}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button className="flex-1 bg-orange-500 hover:bg-orange-600">
+                      Ver Detalles
+                    </Button>
+                    <Button variant="outline" className="flex-1">
+                      Descargar
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sección de Características */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Beneficios de Nuestro Servicio</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Gestiona tus finanzas de manera más eficiente con nuestras herramientas
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {beneficios.map((beneficio, index) => {
+              const IconComponent = beneficio.icono;
+              return (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-orange-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <IconComponent className="h-6 w-6 text-orange-500" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{beneficio.titulo}</h3>
+                  <p className="text-gray-600">{beneficio.descripcion}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-orange-500 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">¿Necesitas ayuda con tu estado de cuenta?</h2>
+          <p className="text-xl mb-8 text-orange-100">
+            Nuestro equipo está listo para asistirte con cualquier consulta
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
+              <Phone className="mr-2 h-5 w-5" />
+              Llamar a un Asesor
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <FileText className="mr-2 h-5 w-5" />
+              Preguntas Frecuentes
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

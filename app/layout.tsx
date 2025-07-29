@@ -58,13 +58,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Asegurarse de que las variables de fuentes estén disponibles globalmente
+  const fontVariables = `${sans.variable} ${heading.variable} ${condensed.variable}`
   return (
     <html 
       lang="es" 
       className={`${sans.variable} ${heading.variable} ${condensed.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-background font-sans antialiased">
+      <body className={`min-h-screen bg-background antialiased ${sans.className}`}>
         <CartProvider>
           <Header />
           <main className="pt-16">{children}</main>

@@ -23,10 +23,18 @@
   }
   
   body {
-    @apply bg-background text-white antialiased;
+    @apply bg-background text-foreground antialiased;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "tnum" 0, "cv05" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-sans);
+  }
+  
+  /* Definir la fuente personalizada para los encabezados */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply font-extrabold uppercase tracking-tight;
+    letter-spacing: -0.5px;
   }
   
   /* Establecer colores de fondo y texto */
@@ -36,12 +44,6 @@
   
   .text-foreground {
     @apply text-white;
-  }
-  
-  /* Estilos de tipografía */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-extrabold uppercase tracking-tight;
-    letter-spacing: -0.5px;
   }
   
   h1 {
