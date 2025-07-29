@@ -9,13 +9,13 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-marmolinas-blue rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">MG</span>
+              <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">RM</span>
               </div>
-              <span className="font-bold text-lg">Marmolinas Granillos</span>
+              <span className="font-bold text-lg">RACING MOTOS</span>
             </div>
             <p className="text-gray-300 text-sm mb-4">
-              Especialistas en venta e instalación de cuarzo, granito y mármol. Desde Loja para todo Ecuador.
+              Especialistas en venta de motocicletas y repuestos. Concesionario autorizado con las mejores marcas del mercado.
             </p>
             <div className="flex space-x-3">
               <a href="#" className="text-gray-400 hover:text-marmolinas-yellow transition-colors">
@@ -93,18 +93,20 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contacto</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-2">
-                <MapPin className="h-5 w-5 text-marmolinas-yellow mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">
-                  Av. Emiliano Ortega 195-05 entre Imbabura y Colón, Loja, Ecuador
+                  Av Cuxibamba y Benjamín Cevallos, Loja, Ecuador
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-marmolinas-yellow" />
-                <span className="text-gray-300 text-sm">+593 98 622 3966</span>
+                <Phone className="h-5 w-5 text-red-500" />
+                <span className="text-gray-300 text-sm">099 273 6139</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-5 w-5 text-marmolinas-yellow" />
-                <span className="text-gray-300 text-sm">info@marmolinasgranillos.com</span>
+                <Mail className="h-5 w-5 text-red-500" />
+                <a href="mailto:vicenteortega09@hotmail.com" className="text-gray-300 text-sm hover:text-red-400 transition-colors">
+                  vicenteortega09@hotmail.com
+                </a>
               </div>
             </div>
           </div>
@@ -112,9 +114,9 @@ export function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            <a href="https://cesarreyesjaramillo.com/" target="_blank" rel="noopener noreferrer" className="hover:text-marmolinas-yellow transition-colors">
+            <a href="https://cesarreyesjaramillo.com/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
               ©cesarreyesjaramillo.com
-            </a> 2024 Marmolinas Granillos Importadores. Todos los derechos reservados.
+            </a> 2024 RACING MOTOS. Todos los derechos reservados.
           </p>
         </div>
       </div>

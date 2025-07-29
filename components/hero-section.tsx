@@ -23,7 +23,7 @@ export function HeroSection({
   botonHref,
   botonColorClass = 'bg-marmolinas-yellow text-marmolinas-blue hover:bg-marmolinas-yellow/90',
   overlayClassName = 'bg-black/40',
-  heightClassName = 'h-[60vh] min-h-[400px] max-h-[600px]',
+  heightClassName = 'h-[70vh] min-h-[500px] max-h-[700px]',
   children,
 }: HeroSectionProps) {
   return (

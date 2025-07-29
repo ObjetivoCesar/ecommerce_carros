@@ -12,7 +12,7 @@ const servicios = {
     titulo: "Venta e Instalación de Cuarzo, Granito y Mármol",
     subtitulo: "Transformamos tu espacio con materiales de la más alta calidad",
     imagen: "/images/hero-marmolinas.jpg",
-    video: "https://www.youtube.com/embed/iobKB3_st6g",
+    video: "https://www.youtube.com/embed/Gm5A3Ir9qv0",
     beneficios: [
       "Materiales importados de primera calidad",
       "Instalación profesional con garantía",

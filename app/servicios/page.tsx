@@ -9,40 +9,40 @@ import { HeroSection } from '@/components/hero-section';
 
 // Servicios principales
 const servicios = [
-  { id: "granito", titulo: "Granito Importado", icono: "/images/granito-tiger-skin.jpeg", descripcion: "Gran variedad de colores y acabados para cocinas y baños." },
-  { id: "cuarzo", titulo: "Cuarzo Premium", icono: "/images/granito-vayolet.webp", descripcion: "Superficies resistentes y modernas para tu hogar." },
-  { id: "marmol", titulo: "Mármol Nacional", icono: "/images/hero-portada-marmolina.jpg", descripcion: "Elegancia natural para pisos y paredes." },
-  { id: "herramientas", titulo: "Herramientas Profesionales", icono: "/images/discos-diamantados.webp", descripcion: "Discos, brocas y accesorios para instalación y corte." },
-  { id: "fachaletas", titulo: "Fachaletas Decorativas", icono: "/images/fachaletas-de-piedra.jpeg", descripcion: "Revestimientos de piedra para interiores y exteriores." },
+  { id: "mantenimiento", titulo: "Mantenimiento Especializado", icono: "/images/Taller_motos1.jpg", descripcion: "Servicio técnico especializado para todas las marcas de motocicletas." },
+  { id: "financiamiento", titulo: "Financiamiento Flexible", icono: "/images/financiamiento_motos1.jpg", descripcion: "Planes de financiamiento adaptados a tu presupuesto y necesidades." },
+  { id: "tramites", titulo: "Gestión de Trámites", icono: "/images/tramitesmotos2.webp", descripcion: "Matriculación, transferencias y todos los trámites vehiculares." },
+  { id: "garantia", titulo: "Garantía Extendida", icono: "/images/motos_grupo1.jpg", descripcion: "Protección completa para tu inversión con garantía extendida." },
+  { id: "repuestos", titulo: "Repuestos Originales", icono: "/images/Accesorios_Motos1.jpg", descripcion: "Repuestos originales y accesorios para todas las marcas." },
 ]
 
 // Ofertas destacadas
 const ofertas = [
-  { id: 1, nombre: "Granito Tiger Skin", imagen: "/images/granito-tiger-skin.jpeg", precio: 85, descripcion: "Granito importado, ideal para cocinas." },
-  { id: 2, nombre: "Broca Diamantada 25mm", imagen: "/images/brocas-diamantadas.webp", precio: 22, descripcion: "Broca profesional para piedra natural." },
-  { id: 3, nombre: "Disco Diamantado 7''", imagen: "/images/discos-diamantados.webp", precio: 35, descripcion: "Corte preciso y rápido en granito y mármol." },
-  { id: 4, nombre: "Fachaleta de Piedra", imagen: "/images/fachaletas-de-piedra.jpeg", precio: 30, descripcion: "Revestimiento decorativo para muros." },
+  { id: 1, nombre: "Mantenimiento Básico", imagen: "/images/Taller_motos1.jpg", precio: 30, descripcion: "Cambio de aceite, filtros y ajustes generales." },
+  { id: 2, nombre: "Mantenimiento Premium", imagen: "/images/Taller_motos2.jpg", precio: 45, descripcion: "Servicio completo de mantenimiento preventivo." },
+  { id: 3, nombre: "Financiamiento 0%", imagen: "/images/financiamiento_motos1.jpg", precio: 0, descripcion: "Financia tu moto sin intereses por 12 meses." },
+  { id: 4, nombre: "Yamaha Crypton 110", imagen: "/images/motos_grupo2.jpg", precio: 3200, descripcion: "Potencia y durabilidad para uso intensivo." },
 ]
 
 // Categorías de productos
 const categorias1 = [
-  { id: 1, nombre: "Granitos", imagen: "/images/granito-black-impala.jpg", descripcion: "Granitos nacionales e importados." },
-  { id: 2, nombre: "Cuarzos", imagen: "/images/granito-vayolet.webp", descripcion: "Cuarzos de alta resistencia." },
-  { id: 3, nombre: "Herramientas", imagen: "/images/discos-diamantados.webp", descripcion: "Discos, brocas y más." },
-  { id: 4, nombre: "Fachaletas", imagen: "/images/fachaletas-de-piedra.jpeg", descripcion: "Revestimientos de piedra." },
+  { id: 1, nombre: "Motos Deportivas", imagen: "/images/motos_grupo1.jpg", descripcion: "Motocicletas deportivas de alta gama." },
+  { id: 2, nombre: "Motos de Trabajo", imagen: "/images/motos_grupo2.jpg", descripcion: "Ideales para delivery y transporte." },
+  { id: 3, nombre: "Repuestos", imagen: "/images/Accesorios_Motos2.jpg", descripcion: "Repuestos originales y accesorios." },
+  { id: 4, nombre: "Servicios", imagen: "/images/Taller_motos3.jpg", descripcion: "Mantenimiento y servicios técnicos." },
 ]
 const categorias2 = [
-  { id: 1, nombre: "Resinas y Adhesivos", imagen: "/images/hero-portada-marmolina.jpg", descripcion: "Materiales para instalación y reparación." },
-  { id: 2, nombre: "Accesorios de Instalación", imagen: "/images/brocas-diamantadas.webp", descripcion: "Todo para un acabado profesional." },
+  { id: 1, nombre: "Financiamiento", imagen: "/images/financiamiento_motos2.jpg", descripcion: "Planes de crédito flexibles y accesibles." },
+  { id: 2, nombre: "Seguros y Garantías", imagen: "/images/motos_grupo3.jpg", descripcion: "Protección completa para tu motocicleta." },
 ]
 
 const heroPinteres = [
-  '/images/cocinalujo_Pinteres.webp',
-  '/images/encimera_Pinteres.webp',
-  '/images/cocina_Pinteres.webp',
-  '/images/lavamanos_Pinteres.webp',
-  '/images/meson_Pinteres.webp',
-  '/images/grifococina_Pinteres.webp',
+  '/images/motos_grupo1.jpg',
+  '/images/motos_grupo2.jpg',
+  '/images/financiamiento_motos1.jpg',
+  '/images/Taller_motos1.jpg',
+  '/images/tramitesmotos3.jpeg',
+  '/images/Accesorios_Motos1.jpg',
 ];
 
 export default function ServicesPage() {
@@ -68,15 +68,15 @@ export default function ServicesPage() {
     <div className="w-full bg-white">
       <HeroSection
         imagen={heroPinteres[heroIndex]}
-        titulo={<>Transforma tus espacios con Granito y Marmolinas</>}
-        subtitulo={<>Calidad, elegancia y garantía para tu hogar o negocio</>}
-        botonTexto="Cotiza Ahora"
-        botonHref="#contacto"
+        titulo={<>Las Mejores Motocicletas en Loja</>}
+        subtitulo={<>Calidad, garantía y el mejor servicio postventa de la región</>}
+        botonTexto="Ver Motos"
+        botonHref="/productos"
         overlayClassName="bg-black/40"
       />
 
       {/* Justo después del HeroSection, agrega la imagen fija sin overlay ni texto */}
-      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/imagen fija.webp')" }} />
+      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/Hero5.jpg')" }} />
 
       {/* CARDS DE SERVICIOS */}
       <section className="w-full py-8 bg-gray-50">
