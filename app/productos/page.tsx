@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { HeroSection } from '@/components/hero-section';
+import { HeroSlider } from '@/components/hero-slider';
 import { useState, useEffect } from 'react';
 
 const productos = [
@@ -112,49 +112,79 @@ const productos = [
   },
 ]
 
-const heroPinteres = [
-  '/images/cocinalujo_Pinteres.webp',
-  '/images/encimera_Pinteres.webp',
-  '/images/cocina_Pinteres.webp',
-  '/images/lavamanos_Pinteres.webp',
-  '/images/meson_Pinteres.webp',
-  '/images/grifococina_Pinteres.webp',
+const slides = [
+  {
+    image: '/images/Motodetrabajo1.jpg',
+    title: 'Escoge tu moto',
+    subtitle: 'Y escogela bien, por que te acompañara a todo lado'
+  },
+  {
+    image: '/images/imagen_de_fondo_2.jpg',
+    title: 'Escoge tu moto',
+    subtitle: 'Y escogela bien, por que te acompañara a todo lado'
+  },
+  {
+    image: '/images/motos_grupo2.jpg',
+    title: 'Escoge tu moto',
+    subtitle: 'Y escogela bien, por que te acompañara a todo lado'
+  }
 ];
 
 export default function ProductsPage() {
-  const [heroIndex, setHeroIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % heroPinteres.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
   return (
     <>
-      <HeroSection
-        imagen={heroPinteres[heroIndex]}
-        titulo={<>Nuestros Productos</>}
-        subtitulo={<>Descubre nuestra amplia gama de materiales de alta calidad para transformar tus espacios</>}
-        overlayClassName="bg-black/40"
-      />
-      {/* Imagen fija */}
-      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/imagen fija.webp')" }} />
+      <div className="relative w-full" style={{ height: 'calc(100vh - 80px)' }}>
+        <HeroSlider 
+          slides={slides}
+          interval={5000}
+          overlayClassName="bg-black/40"
+        />
+      </div>
+      {/* Sección de imagen fija con logo */}
+      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/logo_imagenfija.jpg')" }}>        
+        <div className="absolute inset-0 bg-black/20" />
+      </section>
       <div className="container mx-auto px-4 py-16">
         <Tabs defaultValue="todos" className="w-full">
-          <TabsList className="mx-auto mb-8 flex-wrap">
-            <style>{`
-              [role="tab"][data-state="active"] {
-                background-color: #FF6347 !important;
-                color: white !important;
-              }
-            `}</style>
-            <TabsTrigger value="todos">Todos</TabsTrigger>
-            <TabsTrigger value="motos-trabajo">Motos de Trabajo</TabsTrigger>
-            <TabsTrigger value="motos-taxi">Motos Taxi</TabsTrigger>
-            <TabsTrigger value="granitos">Granitos</TabsTrigger>
-            <TabsTrigger value="herramientas">Herramientas</TabsTrigger>
-            <TabsTrigger value="fachaletas">Fachaletas</TabsTrigger>
+          <TabsList className="mx-auto mb-8 flex-wrap bg-[#fa6807]/10">
+            <TabsTrigger 
+              value="todos"
+              className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
+            >
+              Todos
+            </TabsTrigger>
+            <TabsTrigger 
+              value="motos-trabajo"
+              className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
+            >
+              Motos de Trabajo
+            </TabsTrigger>
+            <TabsTrigger 
+              value="motos-taxi"
+              className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
+            >
+              Motos Taxi
+            </TabsTrigger>
+            <TabsTrigger 
+              value="granitos"
+              className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
+            >
+              Granitos
+            </TabsTrigger>
+            <TabsTrigger 
+              value="herramientas"
+              className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
+            >
+              Herramientas
+            </TabsTrigger>
+            <TabsTrigger 
+              value="fachaletas"
+              className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
+            >
+              Fachaletas
+            </TabsTrigger>
           </TabsList>
+          {/* Contenido para la pestaña Todos */}
           <TabsContent value="todos">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {productos.map((producto) => (
@@ -171,7 +201,7 @@ export default function ProductsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
                       <Link href={producto.href}>Ver Detalles</Link>
                     </Button>
                   </CardContent>
@@ -195,7 +225,7 @@ export default function ProductsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
                       <Link href={producto.href}>Ver Detalles</Link>
                     </Button>
                   </CardContent>
@@ -219,7 +249,7 @@ export default function ProductsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
                       <Link href={producto.href}>Ver Detalles</Link>
                     </Button>
                   </CardContent>
@@ -243,7 +273,7 @@ export default function ProductsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
                       <Link href={producto.href}>Ver Detalles</Link>
                     </Button>
                   </CardContent>
@@ -267,7 +297,7 @@ export default function ProductsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
                       <Link href={producto.href}>Ver Detalles</Link>
                     </Button>
                   </CardContent>
@@ -291,7 +321,7 @@ export default function ProductsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
                       <Link href={producto.href}>Ver Detalles</Link>
                     </Button>
                   </CardContent>

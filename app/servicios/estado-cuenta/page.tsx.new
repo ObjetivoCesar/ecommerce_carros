@@ -90,7 +90,7 @@ export default function EstadoCuentaPage() {
           "Consultar saldo a favor"
         ],
         icon: <DollarSign className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos1.jpg'
+        bgImage: '/images/credito_consumo.jpg'
       }
     ],
     historial: [
@@ -107,7 +107,7 @@ export default function EstadoCuentaPage() {
           "Reportar un problema"
         ],
         icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta.jpg'
+        bgImage: '/images/historial1.jpg'
       },
       {
         id: 5,
@@ -122,7 +122,7 @@ export default function EstadoCuentaPage() {
           "Solicitar certificado"
         ],
         icon: <CreditCard className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta2.jpg'
+        bgImage: '/images/historial2.jpg'
       },
       {
         id: 6,
@@ -137,7 +137,7 @@ export default function EstadoCuentaPage() {
           "Pagar ahora"
         ],
         icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos2.jpg'
+        bgImage: '/images/historial3.jpg'
       }
     ]
   }
@@ -228,14 +228,12 @@ export default function EstadoCuentaPage() {
       <HeroSection
         imagen="/images/estado_cuenta.jpg"
         titulo="Tus Estados de Cuenta"
-        subtitulo={
-          <div className="space-y-2">
-            <p>• Consulta el estado de tus créditos y tarjetas</p>
-            <p>• Realiza pagos en línea de forma segura</p>
-            <p>• Descarga tus comprobantes de pago</p>
-            <p>• Revisa tu historial de transacciones</p>
-          </div>
-        }
+        subtipos={[
+          'Consulta el estado de tus créditos y tarjetas',
+          'Realiza pagos en línea de forma segura',
+          'Descarga tus comprobantes de pago',
+          'Revisa tu historial de transacciones'
+        ]}
         overlayClassName="bg-black/60"
       >
         <div className="w-full md:w-auto mt-8">

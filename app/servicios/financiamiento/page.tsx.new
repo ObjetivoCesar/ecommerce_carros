@@ -58,7 +58,7 @@ export default function FinanciamientoPage() {
           "Anticipo del 20%"
         ],
         icon: <CreditCard className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos1.jpg'
+        bgImage: '/images/financiamiento1.jpg'
       },
       {
         id: 2,
@@ -75,7 +75,7 @@ export default function FinanciamientoPage() {
           "Anticipo del 30%"
         ],
         icon: <DollarSign className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos2.jpg'
+        bgImage: '/images/financiamiento2.jpg'
       },
       {
         id: 3,
@@ -92,7 +92,7 @@ export default function FinanciamientoPage() {
           "Anticipo del 20%"
         ],
         icon: <BadgeCheck className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos3.jpg'
+        bgImage: '/images/financiamiento3.jpg'
       }
     ],
     planes: [
@@ -111,7 +111,7 @@ export default function FinanciamientoPage() {
           "Depósito inicial según plan"
         ],
         icon: <Percent className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta.jpg'
+        bgImage: '/images/plan_ahorro.jpg'
       },
       {
         id: 5,
@@ -128,7 +128,7 @@ export default function FinanciamientoPage() {
           "Anticipo del 20%"
         ],
         icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/tarjeta_Credito1.jpg'
+        bgImage: '/images/leasing_empresas.jpg'
       },
       {
         id: 6,
@@ -139,13 +139,13 @@ export default function FinanciamientoPage() {
         montoMin: 10000,
         montoMax: 250000,
         requisitos: [
-          "RUC de la empresa activo",
+          "RUC de la empresa con más de 2 años de antigüedad",
           "Estados financieros auditados",
           "Referencias bancarias",
           "Anticipo del 25%"
         ],
         icon: <ShieldCheck className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta2.jpg'
+        bgImage: '/images/flota_empresas.jpg'
       }
     ]
   }
@@ -211,7 +211,7 @@ export default function FinanciamientoPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <HeroSection
-        imagen="/images/financiamiento_motos1.jpg"
+        imagen="/images/financiamiento_hero.jpg"
         titulo="Financiamiento para tu Moto"
         subtitulo="Obtén la moto de tus sueños con nuestras opciones de financiamiento flexibles y tasas competitivas. Aprobación rápida y trámites sencillos en Loja, Ecuador."
         overlayClassName="bg-black/60"

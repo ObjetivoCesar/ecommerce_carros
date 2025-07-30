@@ -9,37 +9,46 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import { MapPin, MessageSquareText } from 'lucide-react';
-import { HeroSection } from '@/components/hero-section';
+import { HeroSlider } from '@/components/hero-slider';
 
-// Hero slides - Solo imágenes hero
+// Hero slides - Contenido del slider
 const heroSlides = [
   {
-    imagen: '/images/Hero2.jpg',
-    titulo: 'El Mejor Granito y Cuarzo para tu Proyecto',
-    subtitulo: 'Transforma tu espacio con Marmolinas Granillos',
-    cta: 'Cotiza Ahora',
-    href: '#contacto',
+    image: '/images/Hero2.jpg',
+    title: (
+      <>
+        Las Mejores <span className="bg-white/30 backdrop-blur-sm rounded-lg px-2 py-0.5 font-extrabold text-racing-blue shadow-md">Motocicletas</span> en{' '}
+        <span className="bg-white/30 backdrop-blur-sm rounded-lg px-2 py-0.5 font-extrabold text-racing-blue shadow-md">Loja</span>
+      </>
+    ),
+    subtitle: 'Tu concesionario de confianza en Racing Motos',
+    buttonText: 'Ver Motos',
+    buttonHref: '/productos',
+    buttonVariant: 'default',
   },
   {
-    imagen: '/images/Hero3.jpg',
-    titulo: 'Ambientes Modernos y Elegantes',
-    subtitulo: 'Materiales de alta calidad para tu hogar o negocio',
-    cta: 'Ver Productos',
-    href: '/productos',
+    image: '/images/Hero3.jpg',
+    title: 'Financiamiento Especial',
+    subtitle: 'Hasta 36 meses de plazo y tasas preferenciales',
+    buttonText: 'Solicitar Financiamiento',
+    buttonHref: '/servicios/financiamiento',
+    buttonVariant: 'outline',
   },
   {
-    imagen: '/images/Hero4.jpg',
-    titulo: 'Diseños Exclusivos',
-    subtitulo: 'Crea espacios únicos con nuestros materiales premium',
-    cta: 'Ver Catálogo',
-    href: '/catalogo',
+    image: '/images/Hero4.jpg',
+    title: 'Mantenimiento Profesional',
+    subtitle: 'Servicio técnico especializado para tu moto',
+    buttonText: 'Agendar Cita',
+    buttonHref: '/servicios/mantenimiento',
+    buttonVariant: 'default',
   },
   {
-    imagen: '/images/Hero5.jpg',
-    titulo: 'Asesoría Profesional',
-    subtitulo: 'Expertos en diseño y remodelación de interiores',
-    cta: 'Contáctanos',
-    href: '#contacto',
+    image: '/images/Hero5.jpg',
+    title: 'Repuestos Originales',
+    subtitle: 'Garantía y calidad para tu vehículo',
+    buttonText: 'Ver Repuestos',
+    buttonHref: '/productos/repuestos',
+    buttonVariant: 'outline',
   },
 ];
 
@@ -142,13 +151,17 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen w-full bg-white">
-      {/* HERO SLIDER con imágenes Pinteres */}
-      <HeroSection
-        imagen={heroPinteres[heroIndex]}
-        titulo={<span>Las Mejores <span className="bg-white/30 backdrop-blur-sm rounded-lg px-2 py-0.5 font-extrabold text-racing-blue shadow-md">Motocicletas</span> en <span className="bg-white/30 backdrop-blur-sm rounded-lg px-2 py-0.5 font-extrabold text-racing-blue shadow-md">Loja</span></span>}
-        subtitulo="Tu concesionario de confianza en Racing Motos"
-        botonTexto="Ver Motos"
-        botonHref="/productos"
+      {/* Hero Slider con transiciones suaves */}
+      <HeroSlider
+        slides={heroSlides}
+        interval={6000}
+        overlayClassName="bg-gradient-to-r from-black/70 via-black/40 to-transparent"
+        heightClassName="min-h-screen"
+        showIndicators={true}
+        showArrows={true}
+        autoPlay={true}
+        fade={true}
+        className="shadow-2xl"
       />
       {/* PARALLAX/IMAGEN FIJA */}
       <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/Imagen_de_fondo1.jpg')" }} />
