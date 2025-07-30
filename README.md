@@ -1,50 +1,96 @@
-# Documentación de la Página Principal - Marmolinas Granillos
+# Ecommerce de Motos - Documentación Técnica
 
-## Estructura General
+## Estructura del Proyecto
 
-La página principal está construida con Next.js y Tailwind CSS, usando componentes reutilizables y estilos personalizados para la identidad de Marmolinas Granillos.
+### Archivos Clave
+- `/lib/data/products.ts` - Base de datos centralizada de productos
+- `/app/productos/page.tsx` - Página principal de productos con filtros
+- `/app/productos/[slug]/page.tsx` - Plantilla dinámica de producto
+- `/app/blog/page.tsx` - Blog con artículos sobre motos
+- `/components/` - Componentes reutilizables de la UI
 
-### Secciones principales:
-- **Hero principal:** Banner con imagen de fondo, título, subtítulo y botón de llamada a la acción.
-- **Quiénes Somos:** Texto descriptivo, video de YouTube y recuadro decorativo.
-- **Promociones:** Carrusel responsivo de ofertas, mostrando 4 a la vez en escritorio y slide automático en móvil.
-- **Nuestros Servicios:** Sección con fondo personalizado, tabs con efecto glassmorphism y galería de imágenes con lightbox.
-- **Blog:** Slide/carrusel en móvil y grilla en escritorio, con tarjetas enlazadas a artículos individuales.
-- **Showrooms:** Slide/carrusel en móvil y grilla en escritorio, con cards interactivas y halo azul al hacer hover.
-- **Footer:** Información de contacto, enlaces rápidos (incluyendo Blog), servicios y redes sociales.
+## Sistema de Productos
 
-## Componentes Clave
-- **HeroSection:** Banner principal reutilizable.
-- **Carousel:** Carrusel responsivo para promociones, blog y showrooms.
-- **Tabs, TabsList, TabsTrigger, TabsContent:** Para la sección de servicios con tabs y galería.
-- **Dialog:** Para lightbox de imágenes en la galería de servicios.
-- **Card:** Para tarjetas de productos, blog y showrooms.
-- **Footer/Header:** Navegación y enlaces globales.
+### Estructura de Datos
+Cada producto en `products.ts` sigue esta estructura:
 
-## Estilos y Responsividad
-- **Tailwind CSS:** Utiliza utilidades para espaciado, colores, fuentes y responsividad.
-- **Glassmorphism:** Barra de tabs con fondo semitransparente y desenfoque.
-- **Colores corporativos:** Azul y amarillo de Marmolinas.
-- **Responsividad:**
-  - Carruseles y slides en móvil para evitar scroll vertical excesivo.
-  - Grillas en escritorio para mejor aprovechamiento del espacio.
-  - Imágenes y textos adaptados con clases como `h-32 sm:h-40 md:h-48`, `text-base md:text-lg`, `px-4 md:px-6`.
-  - Barra de tabs scrollable solo en móvil.
-  - Fix global de `overflow-x-hidden` para evitar márgenes blancos.
+```typescript
+{
+  id: string;            // Identificador único (ej: "moto-paseo-1")
+  nombre: string;        // Nombre para mostrar
+  imagen: string;        // Ruta a la imagen (desde /public)
+  precio: number;        // Precio en USD
+  descripcion: string;   // Descripción detallada
+  categoria: string;     // Categoría principal
+  // Campos opcionales
+  formato?: string;      // Para productos con variantes
+  espesor?: string;      // Si aplica
+  acabado?: string;      // Si aplica
+  href?: string;         // Enlace personalizado (opcional)
+}
+```
 
-## Recomendaciones para Reciclar Secciones
-- **HeroSection:** Puede usarse en cualquier página cambiando props de imagen, título y botón.
-- **Carrusel/Carousel:** Útil para mostrar productos, testimonios, galerías, etc. Solo cambia el array de datos.
-- **Tabs + Galería:** Ideal para mostrar categorías, servicios o productos agrupados.
-- **Cards:** Reutilizables para cualquier listado (productos, artículos, sucursales).
-- **Footer/Header:** Mantener consistencia en navegación y enlaces globales.
-- **Lightbox/Dialog:** Útil para ampliar imágenes en cualquier galería.
+### Categorías Principales
+1. **Paseo**: Motocicletas para uso urbano
+2. **Trabajo**: Motos para carga y transporte
+3. **Equipamiento**: Protección para el conductor
+4. **Accesorios**: Componentes adicionales
+5. **Outlet**: Ofertas especiales
 
-## Buenas Prácticas
-- Mantener los contenedores con `w-full` y `max-w-...` para responsividad.
-- Usar `overflow-x-auto` solo en móvil donde sea necesario.
-- Revisar siempre el contraste de textos sobre fondos con opacidad o imágenes.
-- Probar en varios dispositivos y navegadores.
+### Funciones Disponibles
+```typescript
+// Obtener todos los productos
+const productos = getAllProducts();
+
+// Buscar por ID
+const producto = getProductBySlug('moto-paseo-1');
+
+// Filtrar por categoría
+const productosCategoria = getProductsByCategory('Paseo');
+```
+
+## Convenciones
+
+### Imágenes
+- Ubicación: `/public/images/`
+- Formato: `Nombre_Descriptivo.ext` (ej: `Moto_Paseo_150cc.jpg`)
+- Tamaño recomendado: 800x600px
+
+### IDs de Productos
+- Formato: `tipo-numero` (ej: `moto-paseo-1`)
+- Debe ser único para cada producto
+
+## Blog
+- 4 artículos sobre motos
+- Diseño con fondo blanco y textos en negro
+- Hero con título "Blog"
+- Categorías: Consejos, Mantenimiento, Accesorios
+
+## Componentes Principales
+- **ProductCard**: Muestra la vista previa de cada producto
+- **ProductGrid**: Muestra la cuadrícula de productos con filtros
+- **HeroSection**: Banner principal con imagen de fondo
+- **MobileCarousel**: Carrusel para dispositivos móviles
+
+## Estilos
+- **Framework**: Tailwind CSS
+- **Colores Principales**:
+  - Tomate: `#fa6807`
+  - Gris oscuro: `#1a1a1a`
+  - Fondo: `#ffffff`
+
+## Próximas Mejoras
+1. Implementar chatbot de atención al cliente
+2. Añadir sistema de reseñas
+3. Implementar búsqueda por texto
+4. Sistema de inventario
+5. Carrito de compras
+
+## Notas de Desarrollo
+- Las páginas de producto se generan automáticamente
+- Las imágenes deben existir en `/public/images/`
+- Los precios están en USD
+- El sistema está optimizado para móviles primero
 
 ---
 

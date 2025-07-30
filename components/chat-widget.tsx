@@ -194,7 +194,7 @@ export function ChatWidget() {
       {!isOpen ? (
         <Button
           onClick={() => setIsOpen(true)}
-          className="rounded-full w-14 h-14 bg-marmolinas-blue hover:bg-marmolinas-blue/90 text-white shadow-lg"
+          className="rounded-full w-14 h-14 bg-[#fa6807] hover:bg-[#e55d06] text-white shadow-lg transition-colors"
           size="icon"
         >
           <MessageCircle className="h-6 w-6" />
@@ -207,10 +207,10 @@ export function ChatWidget() {
       ) : (
         <div className="bg-white rounded-lg shadow-xl border w-96 h-[750px] flex flex-col">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b bg-marmolinas-blue text-white rounded-t-lg">
+          <div className="flex items-center justify-between p-4 border-b bg-[#fa6807] text-white rounded-t-lg">
             <div className="flex items-center space-x-2">
-              <MessageCircle className="h-5 w-5" />
-              <h3 className="font-semibold">Chat Marmolinas</h3>
+              <MessageCircle className="h-4 w-4" />
+              <h3 className="font-medium text-sm">Michell tu asistente</h3>
             </div>
             <div className="flex items-center space-x-1">
               <Button
@@ -239,37 +239,42 @@ export function ChatWidget() {
               {messages.map((message) => (
                 <div key={message.id} className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}>
                   <div
-                    className={`max-w-[80%] p-2 rounded-lg text-sm ${
-                      message.sender === "user" ? "bg-marmolinas-blue text-white" : "bg-gray-100 text-gray-800"
+                    className={`max-w-[80%] p-3 rounded-lg text-sm ${
+                      message.sender === "user" 
+                        ? "bg-[#fa6807] text-white" 
+                        : "bg-gray-900 text-white"
                     }`}
                   >
                     <div className="flex items-start space-x-2">
-                      {message.sender === "bot" && <Bot className="h-4 w-4 mt-0.5 flex-shrink-0" />}
+                      {message.sender === 'user' ? (
+                        <User className="h-4 w-4 mt-1 text-[#fa6807]" />
+                      ) : (
+                        <Bot className="h-4 w-4 mt-1 text-[#fa6807]" />
+                      )}
                       <div className="flex-1">
-                        <p className="whitespace-pre-wrap">{message.text}</p>
-                        <p className={`text-xs mt-1 ${message.sender === "user" ? "text-blue-100" : "text-gray-500"}`}>
-                          {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                        <p className="font-medium text-xs">
+                          {message.sender === 'user' ? 'Tú' : 'Asistente'}
                         </p>
+                        <p className="text-xs">{message.text}</p>
                       </div>
-                      {message.sender === "user" && <User className="h-4 w-4 mt-0.5 flex-shrink-0" />}
                     </div>
                   </div>
                 </div>
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-gray-100 p-2 rounded-lg text-sm">
+                  <div className="bg-gray-900 p-3 rounded-lg text-sm text-white">
                     <div className="flex items-center space-x-2">
-                      <Bot className="h-4 w-4" />
+                      <Bot className="h-4 w-4 text-[#fa6807]" />
                       <span>Escribiendo...</span>
                       <div className="flex space-x-1">
-                        <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce"></div>
+                        <div className="w-1.5 h-1.5 bg-[#fa6807] rounded-full animate-bounce"></div>
                         <div
-                          className="w-1 h-1 bg-gray-400 rounded-full animate-bounce"
+                          className="w-1.5 h-1.5 bg-[#fa6807] rounded-full animate-bounce"
                           style={{ animationDelay: "0.1s" }}
                         ></div>
                         <div
-                          className="w-1 h-1 bg-gray-400 rounded-full animate-bounce"
+                          className="w-1.5 h-1.5 bg-[#fa6807] rounded-full animate-bounce"
                           style={{ animationDelay: "0.2s" }}
                         ></div>
                       </div>
@@ -282,7 +287,7 @@ export function ChatWidget() {
           </ScrollArea>
 
           {/* Input */}
-          <div className="p-3 border-t space-y-2">
+          <div className="p-3 border-t border-gray-700 bg-gray-800 space-y-2">
             <div className="flex space-x-2">
               <Textarea
                 ref={inputRef}
