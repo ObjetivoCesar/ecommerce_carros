@@ -10,80 +10,13 @@ import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, ShoppingCart } from "lucide-react"
-
-const productos = {
-  "granito-tiger-skin": {
-    id: "granito-tiger-skin",
-    nombre: "Granito Tiger Skin",
-    imagen: "/images/granito-tiger-skin.jpeg",
-    precio: 85,
-    formato: "Losa 320x160cm",
-    espesor: "2cm / 3cm",
-    acabado: "Pulido brillante",
-    descripcion:
-      "El granito Tiger Skin es una piedra natural excepcional que combina elegancia y durabilidad. Sus vetas doradas y negras crean un patrón único que aporta sofisticación a cualquier espacio. Ideal para encimeras de cocina, barras y superficies de alto tráfico.",
-  },
-  "granito-vayolet": {
-    id: "granito-vayolet",
-    nombre: "Granito Vayolet",
-    imagen: "/images/granito-vayolet.webp",
-    precio: 78,
-    formato: "Losa 320x160cm",
-    espesor: "2cm / 3cm",
-    acabado: "Pulido brillante",
-    descripcion:
-      "El granito Vayolet destaca por sus tonos violáceos únicos que aportan personalidad y modernidad a los espacios. Su resistencia y belleza lo convierten en la elección perfecta para proyectos contemporáneos que buscan diferenciarse.",
-  },
-  "granito-black-impala": {
-    id: "granito-black-impala",
-    nombre: "Granito Black Impala",
-    imagen: "/images/granito-black-impala.jpg",
-    precio: 72,
-    formato: "Losa 320x160cm",
-    espesor: "2cm / 3cm",
-    acabado: "Pulido brillante",
-    descripcion:
-      "El granito Black Impala es sinónimo de elegancia atemporal. Su color negro profundo con puntos brillantes plateados crea un efecto visual impresionante. Perfecto para cocinas modernas y espacios que requieren un toque de lujo.",
-  },
-  "discos-diamantados": {
-    id: "discos-diamantados",
-    nombre: "Discos Diamantados",
-    imagen: "/images/discos-diamantados.webp",
-    precio: 45,
-    formato: "Varios diámetros",
-    espesor: "2.2mm - 3.2mm",
-    acabado: "Segmentado/Continuo",
-    descripcion:
-      "Discos diamantados profesionales diseñados específicamente para el corte de piedra natural. Fabricados con diamantes industriales de alta calidad que garantizan cortes precisos y larga duración en granito, mármol y cuarzo.",
-  },
-  "brocas-diamantadas": {
-    id: "brocas-diamantadas",
-    nombre: "Brocas Diamantadas",
-    imagen: "/images/brocas-diamantadas.webp",
-    precio: 25,
-    formato: "Diámetros 6-50mm",
-    espesor: "Longitud variable",
-    acabado: "Punta diamantada",
-    descripcion:
-      "Brocas diamantadas especializadas para perforación en materiales duros como granito, mármol, cuarzo y cerámica. Ideales para instalación de grifería, desagües y accesorios en superficies de piedra natural.",
-  },
-  "fachaletas-piedra": {
-    id: "fachaletas-piedra",
-    nombre: "Fachaletas de Piedra",
-    imagen: "/images/fachaletas-de-piedra.jpeg",
-    precio: 35,
-    formato: "60x15cm",
-    espesor: "1.5cm - 2cm",
-    acabado: "Natural/Rústico",
-    descripcion:
-      "Fachaletas de piedra natural para revestimiento de paredes exteriores e interiores. Aportan textura y calidez a los espacios, siendo ideales para crear ambientes acogedores y con personalidad única.",
-  },
-}
+import { getProductBySlug } from "@/lib/data/products"
+// Los productos ahora se importan desde @/lib/data/products
 
 export default function ProductPage() {
   const params = useParams()
   const slug = (Array.isArray(params.slug) ? params.slug[0] : params.slug) as string
-  const producto = productos[slug as keyof typeof productos]
+  const producto = getProductBySlug(slug)
   const { dispatch } = useCart()
   const { toast } = useToast()
 
@@ -150,8 +83,10 @@ export default function ProductPage() {
           <div>
             <h1 className="text-3xl font-bold text-marmolinas-blue mb-2">{producto.nombre}</h1>
             <p className="text-3xl font-bold text-marmolinas-blue">
-              ${producto.precio}
-              <span className="text-lg font-normal text-gray-600 ml-2">por m²</span>
+              ${producto.precio.toLocaleString()}
+              <span className="text-lg font-normal text-gray-600 ml-2">
+                {producto.categoria === 'Outlet' ? '¡Oferta especial!' : 'c/u'}
+              </span>
             </p>
           </div>
 

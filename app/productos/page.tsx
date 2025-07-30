@@ -7,110 +7,9 @@ import Link from "next/link"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { HeroSlider } from '@/components/hero-slider';
 import { useState, useEffect } from 'react';
-
-const productos = [
-  // Motos de Trabajo
-  {
-    id: "moto-trabajo-1",
-    nombre: "Moto de Trabajo 125cc",
-    imagen: "/images/Motodetrabajo1.jpg",
-    precio: 2500,
-    descripcion: "Moto de trabajo 125cc, ideal para reparto y transporte ligero. Bajo consumo y alto rendimiento.",
-    href: "/productos/moto-trabajo-1",
-    categoria: "motos-trabajo",
-  },
-  {
-    id: "moto-trabajo-2",
-    nombre: "Moto de Trabajo 150cc",
-    imagen: "/images/motodetrabajo2.jpg",
-    precio: 2800,
-    descripcion: "Potente moto de 150cc para trabajo pesado. Perfecta para terrenos difíciles.",
-    href: "/productos/moto-trabajo-2",
-    categoria: "motos-trabajo",
-  },
-  {
-    id: "moto-trabajo-3",
-    nombre: "Moto de Trabajo 200cc",
-    imagen: "/images/motodetrabajo3.jpg",
-    precio: 3200,
-    descripcion: "Alto rendimiento para trabajos exigentes. Motor 200cc con gran capacidad de carga.",
-    href: "/productos/moto-trabajo-3",
-    categoria: "motos-trabajo",
-  },
-  {
-    id: "moto-taxi-1",
-    nombre: "Moto Taxi Familiar",
-    imagen: "/images/motodetrabajotaxi1.jpg",
-    precio: 3500,
-    descripcion: "Moto taxi con capacidad para 4 pasajeros. Cómoda y segura para transporte familiar.",
-    href: "/productos/moto-taxi-1",
-    categoria: "motos-taxi",
-  },
-  {
-    id: "moto-taxi-2",
-    nombre: "Moto Taxi Ejecutivo",
-    imagen: "/images/motodetrabajotaxi2.jpg",
-    precio: 3800,
-    descripcion: "Moto taxi ejecutivo con mayor comodidad y espacio. Ideal para servicio de transporte.",
-    href: "/productos/moto-taxi-2",
-    categoria: "motos-taxi",
-  },
-  // Productos existentes
-  {
-    id: "granito-tiger-skin",
-    nombre: "Granito Tiger Skin",
-    imagen: "/images/granito-tiger-skin.jpeg",
-    precio: 85,
-    descripcion: "Granito con vetas doradas y negras, perfecto para cocinas elegantes",
-    href: "/productos/granito-tiger-skin",
-    categoria: "granitos",
-  },
-  {
-    id: "granito-vayolet",
-    nombre: "Granito Vayolet",
-    imagen: "/images/granito-vayolet.webp",
-    precio: 78,
-    descripcion: "Granito con tonos violáceos únicos, ideal para espacios modernos",
-    href: "/productos/granito-vayolet",
-    categoria: "granitos",
-  },
-  {
-    id: "granito-black-impala",
-    nombre: "Granito Black Impala",
-    imagen: "/images/granito-black-impala.jpg",
-    precio: 72,
-    descripcion: "Granito negro clásico con puntos brillantes, elegancia atemporal",
-    href: "/productos/granito-black-impala",
-    categoria: "granitos",
-  },
-  {
-    id: "discos-diamantados",
-    nombre: "Discos Diamantados",
-    imagen: "/images/discos-diamantados.webp",
-    precio: 45,
-    descripcion: "Herramientas profesionales para corte de piedra natural",
-    href: "/productos/discos-diamantados",
-    categoria: "herramientas",
-  },
-  {
-    id: "brocas-diamantadas",
-    nombre: "Brocas Diamantadas",
-    imagen: "/images/brocas-diamantadas.webp",
-    precio: 25,
-    descripcion: "Brocas especializadas para perforación en materiales duros",
-    href: "/productos/brocas-diamantadas",
-    categoria: "herramientas",
-  },
-  {
-    id: "fachaletas-piedra",
-    nombre: "Fachaletas de Piedra",
-    imagen: "/images/fachaletas-de-piedra.jpeg",
-    precio: 35,
-    descripcion: "Revestimientos decorativos para paredes exteriores e interiores",
-    href: "/productos/fachaletas-piedra",
-    categoria: "fachaletas",
-  },
-]
+import { getAllProducts, getProductsByCategory } from '@/lib/data/products';
+// Obtener todos los productos desde el módulo centralizado
+const productos = getAllProducts();
 
 const slides = [
   {
@@ -154,34 +53,34 @@ export default function ProductsPage() {
               Todos
             </TabsTrigger>
             <TabsTrigger 
-              value="motos-trabajo"
+              value="paseo"
               className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
             >
-              Motos de Trabajo
+              MOTOCICLETAS Paseo
             </TabsTrigger>
             <TabsTrigger 
-              value="motos-taxi"
+              value="trabajo"
               className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
             >
-              Motos Taxi
+              Motocicletas de Trabajo
             </TabsTrigger>
             <TabsTrigger 
-              value="granitos"
+              value="equipamiento"
               className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
             >
-              Granitos
+              EQUIPAMIENTO PILOTO
             </TabsTrigger>
             <TabsTrigger 
-              value="herramientas"
+              value="accesorios"
               className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
             >
-              Herramientas
+              ACCESORIOS PARA MOTO
             </TabsTrigger>
             <TabsTrigger 
-              value="fachaletas"
+              value="outlet"
               className="data-[state=active]:bg-[#fa6807] data-[state=active]:text-white"
             >
-              Fachaletas
+              OUTLET / OFERTAS
             </TabsTrigger>
           </TabsList>
           {/* Contenido para la pestaña Todos */}
@@ -196,94 +95,24 @@ export default function ProductsPage() {
                     <CardTitle className="text-marmolinas-blue">{producto.nombre}</CardTitle>
                     <CardDescription>{producto.descripcion}</CardDescription>
                     <div className="text-2xl font-bold text-marmolinas-blue">
-                      ${producto.precio}
-                      <span className="text-sm font-normal text-gray-600 ml-1">por m²</span>
+                      ${producto.precio.toLocaleString()}
+                      <span className="text-sm font-normal text-gray-600 ml-1">{producto.categoria === 'Outlet' ? '¡Oferta!' : 'c/u'}</span>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
-                      <Link href={producto.href}>Ver Detalles</Link>
+                      <Link href={`/productos/${producto.id}`}>Ver Detalles</Link>
                     </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </TabsContent>
-          <TabsContent value="granitos">
+
+          {/* MOTOCICLETAS Paseo */}
+          <TabsContent value="paseo">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {productos.filter(p => p.categoria === 'granitos').map((producto) => (
-                <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video relative">
-                    <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-marmolinas-blue">{producto.nombre}</CardTitle>
-                    <CardDescription>{producto.descripcion}</CardDescription>
-                    <div className="text-2xl font-bold text-marmolinas-blue">
-                      ${producto.precio}
-                      <span className="text-sm font-normal text-gray-600 ml-1">por m²</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
-                      <Link href={producto.href}>Ver Detalles</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="herramientas">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {productos.filter(p => p.categoria === 'herramientas').map((producto) => (
-                <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video relative">
-                    <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-marmolinas-blue">{producto.nombre}</CardTitle>
-                    <CardDescription>{producto.descripcion}</CardDescription>
-                    <div className="text-2xl font-bold text-marmolinas-blue">
-                      ${producto.precio}
-                      <span className="text-sm font-normal text-gray-600 ml-1">por m²</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
-                      <Link href={producto.href}>Ver Detalles</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="fachaletas">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {productos.filter(p => p.categoria === 'fachaletas').map((producto) => (
-                <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video relative">
-                    <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-marmolinas-blue">{producto.nombre}</CardTitle>
-                    <CardDescription>{producto.descripcion}</CardDescription>
-                    <div className="text-2xl font-bold text-marmolinas-blue">
-                      ${producto.precio}
-                      <span className="text-sm font-normal text-gray-600 ml-1">por m²</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
-                      <Link href={producto.href}>Ver Detalles</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="motos-trabajo">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {productos.filter(p => p.categoria === 'motos-trabajo').map((producto) => (
+              {productos.filter(p => p.categoria === 'Paseo').map((producto) => (
                 <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video relative">
                     <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
@@ -298,16 +127,18 @@ export default function ProductsPage() {
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
-                      <Link href={producto.href}>Ver Detalles</Link>
+                      <Link href={`/productos/${producto.id}`}>Ver Detalles</Link>
                     </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </TabsContent>
-          <TabsContent value="motos-taxi">
+
+          {/* Motocicletas de trabajo */}
+          <TabsContent value="trabajo">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {productos.filter(p => p.categoria === 'motos-taxi').map((producto) => (
+              {productos.filter(p => p.categoria === 'Trabajo').map((producto) => (
                 <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video relative">
                     <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
@@ -322,7 +153,88 @@ export default function ProductsPage() {
                   </CardHeader>
                   <CardContent>
                     <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
-                      <Link href={producto.href}>Ver Detalles</Link>
+                      <Link href={`/productos/${producto.id}`}>Ver Detalles</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          {/* EQUIPAMIENTO PILOTO */}
+          <TabsContent value="equipamiento">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {productos.filter(p => p.categoria === 'Equipamiento').map((producto) => (
+                <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-video relative">
+                    <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-marmolinas-blue">{producto.nombre}</CardTitle>
+                    <CardDescription>{producto.descripcion}</CardDescription>
+                    <div className="text-2xl font-bold text-marmolinas-blue">
+                      ${producto.precio.toLocaleString()}
+                      <span className="text-sm font-normal text-gray-600 ml-1">c/u</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
+                      <Link href={`/productos/${producto.id}`}>Ver Detalles</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          {/* ACCESORIOS PARA MOTO */}
+          <TabsContent value="accesorios">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {productos.filter(p => p.categoria === 'Accesorios').map((producto) => (
+                <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-video relative">
+                    <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-marmolinas-blue">{producto.nombre}</CardTitle>
+                    <CardDescription>{producto.descripcion}</CardDescription>
+                    <div className="text-2xl font-bold text-marmolinas-blue">
+                      ${producto.precio.toLocaleString()}
+                      <span className="text-sm font-normal text-gray-600 ml-1">c/u</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
+                      <Link href={`/productos/${producto.id}`}>Ver Detalles</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          {/* OUTLET / OFERTAS */}
+          <TabsContent value="outlet">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {productos.filter(p => p.categoria === 'Outlet').map((producto) => (
+                <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow border-2 border-red-500 relative">
+                  <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                    ¡OFERTA!
+                  </div>
+                  <div className="aspect-video relative">
+                    <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-marmolinas-blue">{producto.nombre}</CardTitle>
+                    <CardDescription>{producto.descripcion}</CardDescription>
+                    <div className="text-2xl font-bold text-red-500">
+                      ${producto.precio.toLocaleString()}
+                      <span className="text-sm font-normal text-gray-600 ml-1">¡Precio especial!</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <Button asChild className="w-full bg-[#fa6807] hover:bg-[#fa6807]/90 text-white">
+                      <Link href={`/productos/${producto.id}`}>Ver Oferta</Link>
                     </Button>
                   </CardContent>
                 </Card>

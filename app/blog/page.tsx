@@ -4,64 +4,40 @@ import React, { useState } from "react";
 
 const articulos = [
   {
-    titulo: "¿Cómo elegir el mejor granito para tu cocina?",
-    descripcion: "Consejos prácticos para seleccionar el granito ideal según tu estilo y necesidades.",
-    imagen: "/images/encimera_Pinteres.webp",
-    slug: "granito-para-tu-cocina",
-    categoria: "Granito",
-    leidos: 120,
+    titulo: "Los 5 Mejores Modelos de Motos para Iniciar en el Mundo de las Dos Ruedas",
+    descripcion: "Descubre los modelos ideales para principiantes que buscan comodidad, seguridad y buen rendimiento en su primera moto.",
+    imagen: "/images/motos_grupo1.jpg",
+    slug: "mejores-motos-principiantes",
+    categoria: "Consejos",
+    leidos: 245,
   },
   {
-    titulo: "Ventajas del cuarzo premium en superficies modernas",
-    descripcion: "Descubre por qué el cuarzo es tendencia en diseño de interiores y remodelaciones.",
-    imagen: "/images/cocinalujo_Pinteres.webp",
-    slug: "ventajas-cuarzo-premium",
-    categoria: "Cuarzo",
-    leidos: 95,
-  },
-  {
-    titulo: "Fachaletas decorativas: transforma tus espacios",
-    descripcion: "Ideas y tips para renovar ambientes con fachaletas de piedra natural.",
-    imagen: "/images/fachaletas-de-piedra.jpeg",
-    slug: "fachaletas-decorativas",
-    categoria: "Decoración",
-    leidos: 150,
-  },
-  {
-    titulo: "Tendencias en baños de mármol para 2024",
-    descripcion: "Explora los estilos y colores de mármol que serán tendencia en baños modernos este año.",
-    imagen: "/images/lavamanos_Pinteres.webp",
-    slug: "tendencias-banos-marmol-2024",
-    categoria: "Mármol",
-    leidos: 80,
-  },
-  {
-    titulo: "Cómo mantener tus superficies de piedra como nuevas",
-    descripcion: "Guía práctica para limpiar y proteger granito, cuarzo y mármol en el hogar.",
-    imagen: "/images/hero-marmolinas.jpg",
-    slug: "mantener-superficies-piedra",
+    titulo: "Mantenimiento Básico que Toda Moto Necesita",
+    descripcion: "Aprende los cuidados esenciales para mantener tu moto en perfecto estado y alargar su vida útil con estos sencillos pasos.",
+    imagen: "/images/Taller_motos1.jpg",
+    slug: "mantenimiento-basico-motos",
     categoria: "Mantenimiento",
-    leidos: 110,
+    leidos: 189,
   },
   {
-    titulo: "Inspiración: cocinas de lujo con piedra natural",
-    descripcion: "Galería de cocinas espectaculares que combinan funcionalidad y elegancia con piedra natural.",
-    imagen: "/images/cocina_Pinteres.webp",
-    slug: "cocinas-lujo-piedra-natural",
-    categoria: "Inspiración",
-    leidos: 60,
+    titulo: "Equipamiento Esencial para Viajes en Moto",
+    descripcion: "Todo lo que necesitas saber para preparar tu próxima aventura en moto con seguridad y comodidad.",
+    imagen: "/images/Accesorios_Motos1.jpg",
+    slug: "equipamiento-viajes-moto",
+    categoria: "Accesorios",
+    leidos: 156,
   },
   {
-    titulo: "Errores comunes al instalar fachaletas y cómo evitarlos",
-    descripcion: "Aprende qué no hacer al instalar fachaletas y consigue un acabado profesional.",
-    imagen: "/images/imagen fija.webp",
-    slug: "errores-fachaletas",
-    categoria: "Decoración",
-    leidos: 90,
+    titulo: "Cómo Elegir la Moto Perfecta para tu Estilo de Vida",
+    descripcion: "Guía completa para encontrar la moto que mejor se adapte a tus necesidades, ya sea para ciudad, carretera o aventura.",
+    imagen: "/images/motos_grupo2.jpg",
+    slug: "elegir-moto-perfecta",
+    categoria: "Consejos",
+    leidos: 203,
   },
 ];
 
-const categorias = ["Todos", "Granito", "Cuarzo", "Decoración"];
+const categorias = ["Todos", "Consejos", "Mantenimiento", "Accesorios"];
 
 export default function BlogPage() {
   const [busqueda, setBusqueda] = useState("");
@@ -78,9 +54,16 @@ export default function BlogPage() {
   const masLeidos = [...articulos].sort((a, b) => b.leidos - a.leidos).slice(0, 2);
 
   return (
-    <main className="max-w-6xl mx-auto py-12 px-4">
-      <h1 className="text-4xl font-bold text-blue-900 mb-2">Blog de Marmolinas Granillos</h1>
-      <h2 className="text-xl text-gray-700 mb-8">Novedades, consejos y tendencias en mármol y granito</h2>
+    <main className="bg-white min-h-screen">
+      {/* Hero Section */}
+      <div className="bg-[#f9f9f9] py-16 md:py-20 mb-12 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-3">Blog</h1>
+          <p className="text-lg text-gray-700 max-w-2xl">Consejos, noticias y tendencias en el mundo de las motos</p>
+        </div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-4">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Principal */}
         <section className="flex-1">
@@ -98,7 +81,7 @@ export default function BlogPage() {
                 <button
                   key={cat}
                   onClick={() => setCategoria(cat)}
-                  className={`px-4 py-2 rounded-full border transition-colors whitespace-nowrap ${categoria === cat ? "bg-blue-900 text-white border-blue-900" : "bg-white text-blue-900 border-blue-200"}`}
+                  className={`px-4 py-2 rounded-full border transition-colors whitespace-nowrap ${categoria === cat ? "bg-[#fa6807] text-white border-[#fa6807]" : "bg-white text-[#1a1a1a] border-gray-200"}`}
                 >
                   {cat}
                 </button>
@@ -111,13 +94,18 @@ export default function BlogPage() {
               <p className="text-gray-500">No se encontraron artículos.</p>
             ) : (
               articulosFiltrados.map(art => (
-                <div key={art.slug} className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow border border-blue-50 flex flex-col">
+                <div key={art.slug} className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow border border-gray-100 flex flex-col h-full">
                   <img src={art.imagen} alt={art.titulo} className="rounded-t-lg h-48 w-full object-cover" />
                   <div className="p-4 flex-1 flex flex-col">
-                    <span className="text-xs text-blue-700 font-semibold mb-1">{art.categoria}</span>
-                    <h3 className="text-xl font-bold text-blue-900 mb-2">{art.titulo}</h3>
-                    <p className="text-gray-700 mb-4 flex-1">{art.descripcion}</p>
-                    <a href={`/blog/${art.slug}`} className="text-blue-700 font-semibold hover:underline mt-auto">Leer artículo</a>
+                    <span className="text-xs text-[#fa6807] font-semibold mb-1">{art.categoria}</span>
+                    <h3 className="text-xl font-bold text-black mb-2">{art.titulo}</h3>
+                    <p className="text-gray-800 mb-4 flex-1">{art.descripcion}</p>
+                    <a href={`/blog/${art.slug}`} className="text-[#fa6807] font-semibold hover:underline mt-auto inline-flex items-center">
+                      Leer artículo
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               ))
@@ -125,21 +113,25 @@ export default function BlogPage() {
           </div>
         </section>
         {/* Más leídos */}
-        <aside className="w-full md:w-64 flex-shrink-0">
-          <div className="bg-blue-50 rounded-lg p-4 mb-8">
-            <h4 className="text-lg font-bold text-blue-900 mb-4">Más leídos</h4>
-            <ul className="space-y-3">
+        <aside className="w-full md:w-72 flex-shrink-0">
+          <div className="bg-white rounded-lg p-5 mb-8 border border-gray-100">
+            <h4 className="text-lg font-bold text-black mb-4 pb-2 border-b border-gray-200">Más leídos</h4>
+            <ul className="space-y-4">
               {masLeidos.map(art => (
-                <li key={art.slug}>
-                  <a href={`/blog/${art.slug}`} className="text-blue-700 hover:underline font-medium">
+                <li key={art.slug} className="pb-3 border-b border-gray-100 last:border-0 last:pb-0">
+                  <a href={`/blog/${art.slug}`} className="text-[#1a1a1a] hover:text-[#fa6807] font-medium transition-colors">
                     {art.titulo}
                   </a>
-                  <span className="block text-xs text-gray-500">{art.leidos} lecturas</span>
+                  <div className="flex justify-between items-center mt-1">
+                    <span className="text-xs text-gray-500">{art.leidos} lecturas</span>
+                    <span className="text-xs px-2 py-1 bg-[#fa6807] bg-opacity-10 text-[#fa6807] rounded-full">{art.categoria}</span>
+                  </div>
                 </li>
               ))}
             </ul>
           </div>
         </aside>
+      </div>
       </div>
     </main>
   );
