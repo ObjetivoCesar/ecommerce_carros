@@ -46,11 +46,27 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Marmolinas Granillos Importadores - Cuarzo, Granito y Mármol en Ecuador",
+  title: "UsadosLoja.com - Tu Concesionario de Vehículos Usados en Loja",
   description:
-    "Especialistas en venta e instalación de cuarzo, granito y mármol nacional e importado. Desde Loja para todo Ecuador. Calidad inigualable al precio ideal.",
-  keywords: "cuarzo, granito, mármol, Loja, Ecuador, instalación, venta, importadores",
+    "Encuentra los mejores vehículos usados en Loja, Ecuador. Autos, camionetas, camiones y maquinaria pesada con garantía y financiamiento.",
+  keywords: "vehículos usados, autos usados, camionetas usadas, camiones usados, maquinaria pesada, Loja, Ecuador, concesionario, financiamiento, garantía",
   generator: 'v0.dev',
+  openGraph: {
+    title: "UsadosLoja.com - Tu Concesionario de Vehículos Usados en Loja",
+    description:
+      "Encuentra los mejores vehículos usados en Loja, Ecuador. Autos, camionetas, camiones y maquinaria pesada con garantía y financiamiento.",
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'UsadosLoja.com - Vehículos Usados',
+      },
+    ],
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://www.usadosloja.com', // Reemplaza con tu URL real
+  },
 }
 
 export default function RootLayout({

@@ -180,7 +180,7 @@ export default function HomePage() {
         className="shadow-2xl"
       />
       {/* PARALLAX/IMAGEN FIJA */}
-      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/Heros/Hero2.jpg')" }} />
+      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/Heros/hero2.jpg')" }} />
 
       {/* QUIÉNES SOMOS */}
       <section className="w-full py-20 md:py-32 text-white" style={{ backgroundColor: '#040404' }}>
@@ -263,7 +263,7 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/images/Heros/Hero3.jpg"
+            src="/images/Heros/hero3.jpg"
             alt="Fondo Nuestros Servicios"
             className="w-full h-full object-cover object-center"
             draggable="false"
