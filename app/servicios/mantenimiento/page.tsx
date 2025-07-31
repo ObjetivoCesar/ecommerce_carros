@@ -56,8 +56,8 @@ export default function MantenimientoPage() {
           "Revisión de frenos",
           "Revisión de luces y sistema eléctrico"
         ],
-        icon: <Wrench className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos1.jpg'
+        icon: <Wrench className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila.jpg'
       },
       {
         id: 2,
@@ -71,13 +71,13 @@ export default function MantenimientoPage() {
           "Limpieza de carburador/inyectores",
           "Revisión de suspensión"
         ],
-        icon: <Settings className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos2.jpg'
+        icon: <Settings className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila1.jpg'
       },
       {
         id: 3,
         titulo: "Mantenimiento Premium",
-        descripcion: "Servicio completo para motos de alto rendimiento",
+        descripcion: "Servicio completo para vehículos de alto rendimiento",
         precio: 90,
         popular: false,
         incluye: [
@@ -86,15 +86,15 @@ export default function MantenimientoPage() {
           "Limpieza de sistema de combustible",
           "Informe detallado del estado"
         ],
-        icon: <Zap className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos3.jpg'
+        icon: <Zap className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila2.jpg'
       }
     ],
     correctivo: [
       {
         id: 4,
         titulo: "Diagnóstico General",
-        descripcion: "Identificación de fallas en tu motocicleta",
+        descripcion: "Identificación de fallas en tu vehículo",
         precio: 25,
         popular: false,
         incluye: [
@@ -103,8 +103,8 @@ export default function MantenimientoPage() {
           "Revisión de sistemas",
           "Presupuesto detallado"
         ],
-        icon: <AlertTriangle className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos4.jpg'
+        icon: <AlertTriangle className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila3.jpg'
       },
       {
         id: 5,
@@ -118,8 +118,8 @@ export default function MantenimientoPage() {
           "Pruebas de funcionamiento",
           "Garantía de 3 meses"
         ],
-        icon: <Wrench className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos1.jpg'
+        icon: <Wrench className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila.jpg'
       },
       {
         id: 6,
@@ -133,8 +133,8 @@ export default function MantenimientoPage() {
           "Reparación de cortocircuitos",
           "Prueba final"
         ],
-        icon: <Zap className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos2.jpg'
+        icon: <Zap className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila1.jpg'
       }
     ],
     otros: [
@@ -150,8 +150,8 @@ export default function MantenimientoPage() {
           "Limpieza de cadena",
           "Encerado y pulido"
         ],
-        icon: <Users className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos3.jpg'
+        icon: <Users className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila2.jpg'
       },
       {
         id: 8,
@@ -165,8 +165,8 @@ export default function MantenimientoPage() {
           "Verificación de documentos",
           "Informe detallado"
         ],
-        icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/Taller_motos4.jpg'
+        icon: <FileText className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/autos/carros_en_fila3.jpg'
       }
     ]
   }
@@ -187,7 +187,7 @@ export default function MantenimientoPage() {
             <h3 className="text-xl font-bold text-white mb-1">{servicio.titulo}</h3>
             <p className="text-gray-200 text-sm line-clamp-2">{servicio.descripcion}</p>
             {servicio.popular && (
-              <div className="mt-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#fa6704] text-white">
+              <div className="mt-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#F57B20] text-white">
                 <Star className="w-3 h-3 mr-1" />
                 Popular
               </div>
@@ -198,18 +198,18 @@ export default function MantenimientoPage() {
       <div className="p-4">
         <div className="mb-4">
           <h4 className="font-semibold text-gray-800 mb-2">Incluye:</h4>
-          <ul className="space-y-1 text-sm text-gray-600">
+          <ul className="space-y-1 text-sm text-white">
             {servicio.incluye.map((item, i) => (
               <li key={i} className="flex items-start">
-                <CheckCircle className="w-4 h-4 text-[#fa6704] mt-0.5 mr-2 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-[#F57B20] mt-0.5 mr-2 flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
         <div className="flex justify-between items-center mt-4">
-          <span className="text-xl font-bold text-gray-900">${servicio.precio}</span>
-          <Button className="bg-[#fa6704] hover:bg-[#e65c00] text-white">
+          <span className="text-xl font-bold text-white">${servicio.precio}</span>
+          <Button className="bg-[#F57B20] hover:bg-[#D96518] text-white">
             <Wrench className="w-4 h-4 mr-2" />
             Solicitar
           </Button>
@@ -221,16 +221,16 @@ export default function MantenimientoPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <HeroSection
-        imagen="/images/Taller_motos1.jpg"
+        imagen="/images/Interior de la empresa/consecionario_interno.jpg"
         titulo="Servicio Técnico Especializado"
-        subtitulo="Mantenimiento profesional para tu motocicleta con técnicos certificados y repuestos originales en Loja, Ecuador."
+        subtitulo="Mantenimiento profesional para tu vehículo con técnicos certificados y repuestos originales en Loja, Ecuador."
         overlayClassName="bg-black/60"
       >
         <div className="w-full md:w-auto mt-8">
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-[#F57B20] hover:bg-[#D96518] text-white font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Wrench className="mr-2 h-5 w-5" />
               Solicitar Cita
@@ -252,7 +252,7 @@ export default function MantenimientoPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestros Servicios de Mantenimiento</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Ofrecemos servicios completos para mantener tu motocicleta en óptimas condiciones. 
+              Ofrecemos servicios completos para mantener tu vehículo en óptimas condiciones. 
               Selecciona el tipo de servicio que necesitas y encuentra el paquete que mejor se adapte a ti.
             </p>
           </div>
@@ -266,21 +266,21 @@ export default function MantenimientoPage() {
               <TabsList className="bg-gray-100 p-1 rounded-lg">
                 <TabsTrigger 
                   value="preventivo" 
-                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'preventivo' ? 'bg-white shadow-sm text-[#fa6704]' : 'text-gray-600 hover:text-gray-900'}`}
+                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'preventivo' ? 'bg-white shadow-sm text-[#F57B20]' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <Wrench className="w-4 h-4 mr-2" />
                   Preventivo
                 </TabsTrigger>
                 <TabsTrigger 
                   value="correctivo" 
-                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'correctivo' ? 'bg-white shadow-sm text-[#fa6704]' : 'text-gray-600 hover:text-gray-900'}`}
+                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'correctivo' ? 'bg-white shadow-sm text-[#F57B20]' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <Settings className="w-4 h-4 mr-2" />
                   Correctivo
                 </TabsTrigger>
                 <TabsTrigger 
                   value="otros" 
-                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'otros' ? 'bg-white shadow-sm text-[#fa6704]' : 'text-gray-600 hover:text-gray-900'}`}
+                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'otros' ? 'bg-white shadow-sm text-[#F57B20]' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <ShieldCheck className="w-4 h-4 mr-2" />
                   Otros Servicios
@@ -310,7 +310,7 @@ export default function MantenimientoPage() {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Contáctanos para servicios personalizados o si tienes alguna pregunta sobre nuestros servicios de mantenimiento.
             </p>
-            <Button size="lg" className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-semibold">
+            <Button size="lg" className="bg-[#F57B20] hover:bg-[#D96518] text-white font-semibold">
               <Wrench className="mr-2 h-5 w-5" />
               Contáctanos Ahora
             </Button>

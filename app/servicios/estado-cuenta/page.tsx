@@ -57,8 +57,8 @@ export default function EstadoCuentaPage() {
           "Programar pago automático",
           "Contactar a un asesor"
         ],
-        icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_de_cuenta3.jpg'
+        icon: <FileText className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/compra_carros.jpg'
       },
       {
         id: 2,
@@ -73,8 +73,8 @@ export default function EstadoCuentaPage() {
           "Pagar ahora",
           "Solicitar aumento de línea"
         ],
-        icon: <CreditCard className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/tarjeta_Credito2.jpg'
+        icon: <CreditCard className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/compra_carros2.jpg'
       },
       {
         id: 3,
@@ -89,8 +89,8 @@ export default function EstadoCuentaPage() {
           "Pagar ahora",
           "Consultar saldo a favor"
         ],
-        icon: <DollarSign className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos1.jpg'
+        icon: <DollarSign className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/compra_carros3.jpg'
       }
     ],
     historial: [
@@ -106,8 +106,8 @@ export default function EstadoCuentaPage() {
           "Ver comprobante de pago",
           "Reportar un problema"
         ],
-        icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta.jpg'
+        icon: <FileText className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/cotiza1.jpg'
       },
       {
         id: 5,
@@ -121,8 +121,8 @@ export default function EstadoCuentaPage() {
           "Ver transacciones",
           "Solicitar certificado"
         ],
-        icon: <CreditCard className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta2.jpg'
+        icon: <CreditCard className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/cotiza2.jpg'
       },
       {
         id: 6,
@@ -136,8 +136,8 @@ export default function EstadoCuentaPage() {
           "Ver recargos",
           "Pagar ahora"
         ],
-        icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos2.jpg'
+        icon: <FileText className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/cotiza3.jpg'
       }
     ]
   }
@@ -187,35 +187,35 @@ export default function EstadoCuentaPage() {
               <h3 className="text-xl font-bold text-white mb-1">{cuenta.titulo}</h3>
               {getEstadoBadge(cuenta.estado)}
             </div>
-            <p className="text-gray-200 text-sm line-clamp-2">{cuenta.descripcion}</p>
+            <p className="text-white text-sm line-clamp-2">{cuenta.descripcion}</p>
           </div>
         </div>
       </div>
       <div className="p-4">
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <p className="text-sm text-gray-600">Vencimiento</p>
-            <p className="font-semibold text-gray-900">{cuenta.fechaVencimiento}</p>
+            <p className="text-sm text-white">Vencimiento</p>
+            <p className="font-semibold text-white">{cuenta.fechaVencimiento}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">Monto</p>
-            <p className="font-semibold text-gray-900">${cuenta.monto.toFixed(2)}</p>
+            <p className="text-sm text-white">Monto</p>
+            <p className="font-semibold text-white">${cuenta.monto.toFixed(2)}</p>
           </div>
         </div>
         
         <div className="mb-4">
-          <h4 className="font-semibold text-gray-800 mb-2">Acciones disponibles:</h4>
-          <ul className="space-y-2 text-sm text-gray-600">
+          <h4 className="font-semibold text-white mb-2">Acciones disponibles:</h4>
+          <ul className="space-y-2 text-sm text-white">
             {cuenta.acciones.map((accion, i) => (
               <li key={i} className="flex items-center">
-                <ArrowRight className="w-4 h-4 text-[#fa6704] mr-2" />
-                <span className="hover:text-[#fa6704] cursor-pointer">{accion}</span>
+                <ArrowRight className="w-4 h-4 text-[#F57B20] mr-2" />
+                <span className="hover:text-[#F57B20] cursor-pointer">{accion}</span>
               </li>
             ))}
           </ul>
         </div>
         
-        <Button className="w-full bg-[#fa6704] hover:bg-[#e65c00] text-white">
+        <Button className="w-full bg-[#F57B20] hover:bg-[#D96518] text-white">
           <Download className="w-4 h-4 mr-2" />
           Ver Detalles Completos
         </Button>
@@ -226,7 +226,7 @@ export default function EstadoCuentaPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <HeroSection
-        imagen="/images/estado_cuenta.jpg"
+        imagen="/images/Financiamiento/financiamiento_carros.jpg"
         titulo="Tus Estados de Cuenta"
         subtitulo={
           <div className="space-y-2">
@@ -242,7 +242,7 @@ export default function EstadoCuentaPage() {
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-[#F57B20] hover:bg-[#D96518] text-white font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <FileText className="mr-2 h-5 w-5" />
               Ingresar a Mi Cuenta
@@ -278,14 +278,14 @@ export default function EstadoCuentaPage() {
               <TabsList className="bg-gray-100 p-1 rounded-lg">
                 <TabsTrigger 
                   value="activos" 
-                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'activos' ? 'bg-white shadow-sm text-[#fa6704]' : 'text-gray-600 hover:text-gray-900'}`}
+                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'activos' ? 'bg-white shadow-sm text-[#F57B20]' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <FileText className="w-4 h-4 mr-2" />
                   Estados Activos
                 </TabsTrigger>
                 <TabsTrigger 
                   value="historial" 
-                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'historial' ? 'bg-white shadow-sm text-[#fa6704]' : 'text-gray-600 hover:text-gray-900'}`}
+                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'historial' ? 'bg-white shadow-sm text-[#F57B20]' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <History className="w-4 h-4 mr-2" />
                   Historial
@@ -316,7 +316,7 @@ export default function EstadoCuentaPage() {
                 <div className="h-full relative">
                   <Image
                     className="h-full w-full object-cover"
-                    src="/images/soporte_financiero.jpg"
+                    src="/images/Financiamiento/te_compro.jpg"
                     alt="Soporte financiero personalizado"
                     width={600}
                     height={400}
@@ -325,7 +325,7 @@ export default function EstadoCuentaPage() {
                 </div>
               </div>
               <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-[#fa6704] font-semibold mb-1">Soporte Personalizado</div>
+                <div className="uppercase tracking-wide text-sm text-[#F57B20] font-semibold mb-1">Soporte Personalizado</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Necesitas ayuda con tus estados de cuenta?</h3>
                 <p className="text-gray-600 mb-6">
                   Nuestro equipo de asesores financieros está listo para ayudarte con cualquier consulta sobre tus créditos, 
@@ -364,7 +364,7 @@ export default function EstadoCuentaPage() {
                   </li>
                 </ul>
                 <div className="mt-6">
-                  <Button variant="outline" className="border-[#fa6704] text-[#fa6704] hover:bg-[#fa6704]/10">
+                  <Button variant="outline" className="border-[#F57B20] text-[#F57B20] hover:bg-[#F57B20]/10">
                     Ver Todas las Opciones de Contacto
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -385,11 +385,11 @@ export default function EstadoCuentaPage() {
                   <input 
                     type="email" 
                     placeholder="Ingresa tu correo electrónico"
-                    className="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#fa6704]"
+                    className="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#F57B20]"
                   />
                 </div>
                 <Button 
-                  className="bg-[#fa6704] hover:bg-[#e65c00] text-white whitespace-nowrap"
+                  className="bg-[#F57B20] hover:bg-[#D96518] text-white whitespace-nowrap"
                 >
                   Suscribirme Ahora
                 </Button>

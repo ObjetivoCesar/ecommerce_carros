@@ -9,40 +9,39 @@ import { HeroSection } from '@/components/hero-section';
 
 // Servicios principales
 const servicios = [
-  { id: "mantenimiento", titulo: "Mantenimiento Especializado", icono: "/images/Taller_motos1.jpg", descripcion: "Servicio técnico especializado para todas las marcas de motocicletas." },
-  { id: "financiamiento", titulo: "Financiamiento Flexible", icono: "/images/financiamiento_motos1.jpg", descripcion: "Planes de financiamiento adaptados a tu presupuesto y necesidades." },
-  { id: "tramites", titulo: "Gestión de Trámites", icono: "/images/tramitesmotos2.webp", descripcion: "Matriculación, transferencias y todos los trámites vehiculares." },
-  { id: "garantia", titulo: "Garantía Extendida", icono: "/images/motos_grupo1.jpg", descripcion: "Protección completa para tu inversión con garantía extendida." },
+  { id: "mantenimiento", titulo: "Mantenimiento Especializado", icono: "/images/Taller_vehículos1.jpg", descripcion: "Servicio técnico especializado para todas las marcas de vehículos." },
+  { id: "financiamiento", titulo: "Financiamiento Flexible", icono: "/images/financiamiento_vehículos1.jpg", descripcion: "Planes de financiamiento adaptados a tu presupuesto y necesidades." },
+  { id: "tramites", titulo: "Gestión de Trámites", icono: "/images/tramitesvehículos2.webp", descripcion: "Matriculación, transferencias y todos los trámites vehiculares." },
+  { id: "garantia", titulo: "Garantía Extendida", icono: "/images/vehículos_grupo1.jpg", descripcion: "Protección completa para tu inversión con garantía extendida." },
   { id: "repuestos", titulo: "Repuestos Originales", icono: "/images/Accesorios_Motos1.jpg", descripcion: "Repuestos originales y accesorios para todas las marcas." },
 ]
 
 // Ofertas destacadas
 const ofertas = [
-  { id: 1, nombre: "Mantenimiento Básico", imagen: "/images/Taller_motos1.jpg", precio: 30, descripcion: "Cambio de aceite, filtros y ajustes generales." },
-  { id: 2, nombre: "Mantenimiento Premium", imagen: "/images/Taller_motos2.jpg", precio: 45, descripcion: "Servicio completo de mantenimiento preventivo." },
-  { id: 3, nombre: "Financiamiento 0%", imagen: "/images/financiamiento_motos1.jpg", precio: 0, descripcion: "Financia tu moto sin intereses por 12 meses." },
-  { id: 4, nombre: "Yamaha Crypton 110", imagen: "/images/motos_grupo2.jpg", precio: 3200, descripcion: "Potencia y durabilidad para uso intensivo." },
+  { id: 1, nombre: "Mantenimiento Básico", imagen: "/images/Taller_vehículos1.jpg", precio: 30, descripcion: "Cambio de aceite, filtros y ajustes generales." },
+  { id: 2, nombre: "Mantenimiento Premium", imagen: "/images/Taller_vehículos2.jpg", precio: 45, descripcion: "Servicio completo de mantenimiento preventivo." },
+  { id: 3, nombre: "Financiamiento 0%", imagen: "/images/financiamiento_vehículos1.jpg", precio: 0, descripcion: "Financia tu moto sin intereses por 12 meses." },
+  { id: 4, nombre: "Yamaha Crypton 110", imagen: "/images/vehículos_grupo2.jpg", precio: 3200, descripcion: "Potencia y durabilidad para uso intensivo." },
 ]
 
 // Categorías de productos
 const categorias1 = [
-  { id: 1, nombre: "Motos Deportivas", imagen: "/images/motos_grupo1.jpg", descripcion: "Motocicletas deportivas de alta gama." },
-  { id: 2, nombre: "Motos de Trabajo", imagen: "/images/motos_grupo2.jpg", descripcion: "Ideales para delivery y transporte." },
+  { id: 1, nombre: "Motos Deportivas", imagen: "/images/vehículos_grupo1.jpg", descripcion: "Motocicletas deportivas de alta gama." },
+  { id: 2, nombre: "Motos de Trabajo", imagen: "/images/vehículos_grupo2.jpg", descripcion: "Ideales para delivery y transporte." },
   { id: 3, nombre: "Repuestos", imagen: "/images/Accesorios_Motos2.jpg", descripcion: "Repuestos originales y accesorios." },
-  { id: 4, nombre: "Servicios", imagen: "/images/Taller_motos3.jpg", descripcion: "Mantenimiento y servicios técnicos." },
+  { id: 4, nombre: "Servicios", imagen: "/images/Taller_vehículos3.jpg", descripcion: "Mantenimiento y servicios técnicos." },
 ]
 const categorias2 = [
-  { id: 1, nombre: "Financiamiento", imagen: "/images/financiamiento_motos2.jpg", descripcion: "Planes de crédito flexibles y accesibles." },
-  { id: 2, nombre: "Seguros y Garantías", imagen: "/images/motos_grupo3.jpg", descripcion: "Protección completa para tu motocicleta." },
+  { id: 1, nombre: "Financiamiento", imagen: "/images/financiamiento_vehículos2.jpg", descripcion: "Planes de crédito flexibles y accesibles." },
+  { id: 2, nombre: "Seguros y Garantías", imagen: "/images/vehículos_grupo3.jpg", descripcion: "Protección completa para tu motocicleta." },
 ]
 
 const heroPinteres = [
-  '/images/motos_grupo1.jpg',
-  '/images/motos_grupo2.jpg',
-  '/images/financiamiento_motos1.jpg',
-  '/images/Taller_motos1.jpg',
-  '/images/tramitesmotos3.jpeg',
-  '/images/Accesorios_Motos1.jpg',
+  '/images/Exterior de la empresa/local_exterior1.jpg',
+  '/images/Interior de la empresa/consecionario_interno.jpg',
+  '/images/Exterior de la empresa/local_exterior2.jpg',
+  '/images/Interior de la empresa/consecionario2.jpg',
+  '/images/Exterior de la empresa/local_exterior3.jpg',
 ];
 
 export default function ServicesPage() {

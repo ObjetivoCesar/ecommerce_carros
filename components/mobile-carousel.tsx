@@ -91,7 +91,7 @@ export function MobileCarousel({
               onClick={() => scrollTo(index)}
               className={cn(
                 'w-2.5 h-2.5 rounded-full transition-colors',
-                index === selectedIndex ? 'bg-[#fa6704]' : 'bg-gray-300'
+                index === selectedIndex ? 'bg-[#F57B20]' : 'bg-gray-300'
               )}
               aria-label={`Ir a la diapositiva ${index + 1}`}
             />

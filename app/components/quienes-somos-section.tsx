@@ -13,7 +13,7 @@ export function QuienesSomosSection() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300">
-                En <span className="text-marmolinas-yellow font-semibold">Racing Motos</span>, nos apasiona todo lo relacionado con el mundo de las dos ruedas. 
+                En <span className="text-marmolinas-yellow font-semibold">UsadosLoja.com</span>, nos apasiona todo lo relacionado con el mundo de las dos ruedas. 
                 Desde nuestros inicios, nos hemos dedicado a ofrecer productos y servicios de la más 
                 alta calidad para los amantes de las motocicletas.
               </p>
@@ -35,8 +35,8 @@ export function QuienesSomosSection() {
             
             <div className="relative h-80 md:h-96 rounded-xl overflow-hidden">
               <Image 
-                src="/images/motos_grupo1.jpg" 
-                alt="Equipo de Racing Motos"
+                src="/images/vehículos_grupo1.jpg" 
+                alt="Equipo de UsadosLoja.com"
                 fill
                 className="object-cover"
               />

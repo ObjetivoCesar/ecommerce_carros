@@ -9,13 +9,13 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">RM</span>
+              <div className="w-10 h-10 bg-[#F57B20] rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">UL</span>
               </div>
-              <span className="font-bold text-lg">RACING MOTOS</span>
+              <span className="font-bold text-lg">USADOSLOJA.COM</span>
             </div>
             <p className="text-gray-300 text-sm mb-4">
-              Especialistas en venta de motocicletas y repuestos. Concesionario autorizado con las mejores marcas del mercado.
+              Especialistas en venta de vehículos y repuestos. Concesionario autorizado con las mejores marcas del mercado.
             </p>
             <div className="flex space-x-3">
               <a href="#" className="text-gray-400 hover:text-marmolinas-yellow transition-colors">
@@ -93,17 +93,17 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contacto</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-2">
-                <MapPin className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">
                   Av Cuxibamba y Benjamín Cevallos, Loja, Ecuador
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-red-500" />
+                <Phone className="h-5 w-5 text-white" />
                 <span className="text-gray-300 text-sm">099 273 6139</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-5 w-5 text-red-500" />
+                <Mail className="h-5 w-5 text-white" />
                 <a href="mailto:vicenteortega09@hotmail.com" className="text-gray-300 text-sm hover:text-red-400 transition-colors">
                   vicenteortega09@hotmail.com
                 </a>
@@ -116,7 +116,7 @@ export function Footer() {
           <p className="text-gray-400 text-sm">
             <a href="https://cesarreyesjaramillo.com/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
               ©cesarreyesjaramillo.com
-            </a> 2024 RACING MOTOS. Todos los derechos reservados.
+            </a> 2024 USADOSLOJA.COM. Todos los derechos reservados.
           </p>
         </div>
       </div>

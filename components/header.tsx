@@ -40,11 +40,11 @@ export function Header() {
             <Link href="/" className="flex items-center h-full py-2">
               <div className="relative h-full w-[160px] md:w-[180px] flex items-center">
                 <Image
-                  src="/images/logo.jpg"
-                  alt="Racing Motos Loja"
-                  fill
-                  sizes="(max-width: 768px) 160px, 180px"
-                  className="object-contain object-left"
+                  src="/images/logo.png"
+                  alt="UsadosLoja.com Logo"
+                  width={150}
+                  height={150}
+                  className="dark:invert"
                   priority
                 />
               </div>
@@ -52,25 +52,25 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href="/" className="text-white hover:text-[#fa6704] transition-colors">
+              <Link href="/" className="text-white hover:text-[#F57B20] transition-colors">
                 Inicio
               </Link>
               <div className="relative group">
-                <Link href="/servicios" className="text-white hover:text-[#fa6704] transition-colors flex items-center">
+                <Link href="/servicios" className="text-white hover:text-[#F57B20] transition-colors flex items-center">
                   Servicios
                   <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </Link>
                 <div className="absolute left-0 mt-2 w-56 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50 border border-gray-800 pt-2"
                   onMouseEnter={undefined} onMouseLeave={undefined}>
-                  <Link href="/servicios/mantenimiento" className="block px-4 py-3 text-white hover:bg-[#fa6704] hover:text-white transition-colors">Mantenimiento</Link>
-                  <Link href="/servicios/financiamiento" className="block px-4 py-3 text-white hover:bg-[#fa6704] hover:text-white transition-colors">Financiamiento</Link>
-                  <Link href="/servicios/estado-cuenta" className="block px-4 py-3 text-white hover:bg-[#fa6704] hover:text-white transition-colors">Estado de Cuenta</Link>
+                  <Link href="/servicios/mantenimiento" className="block px-4 py-3 text-white hover:bg-[#F57B20] hover:text-white transition-colors">Mantenimiento</Link>
+                  <Link href="/servicios/financiamiento" className="block px-4 py-3 text-white hover:bg-[#F57B20] hover:text-white transition-colors">Financiamiento</Link>
+                  <Link href="/servicios/estado-cuenta" className="block px-4 py-3 text-white hover:bg-[#F57B20] hover:text-white transition-colors">Estado de Cuenta</Link>
                 </div>
               </div>
-              <Link href="/productos" className="text-white hover:text-[#fa6704] transition-colors">
-                Patio de Motos
+              <Link href="/productos" className="text-white hover:text-[#F57B20] transition-colors">
+                Patio de Vehículos
               </Link>
-              <Link href="/blog" className="text-white hover:text-[#fa6704] transition-colors">
+              <Link href="/blog" className="text-white hover:text-[#F57B20] transition-colors">
                 Blog
               </Link>
             </nav>
@@ -85,7 +85,7 @@ export function Header() {
               >
                 <ShoppingCart className="h-5 w-5" />
                 {state.items.length > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#fa6704] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
+                  <span className="absolute -top-1 -right-1 bg-[#F57B20] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
                     {state.items.reduce((sum, item) => sum + item.cantidad, 0)}
                   </span>
                 )}
@@ -93,7 +93,7 @@ export function Header() {
 
               <Button
                 asChild
-                className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-semibold transition-colors"
+                className="bg-[#F57B20] hover:bg-[#D96518] text-white font-semibold transition-colors"
               >
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   Cotiza
@@ -118,35 +118,35 @@ export function Header() {
               <nav className="flex flex-col space-y-2">
                 <Link
                   href="/"
-                  className="text-white hover:text-[#fa6704] transition-colors py-2"
+                  className="text-white hover:text-[#F57B20] transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Inicio
                 </Link>
                 <div>
                   <button
-                    className="w-full text-left text-white hover:text-[#fa6704] transition-colors py-2 flex items-center justify-between"
+                    className="w-full text-left text-white hover:text-[#F57B20] transition-colors py-2 flex items-center justify-between"
                     type="button"
                   >
                     Servicios
                     <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   <div className="pl-4 flex flex-col space-y-1 mt-1">
-                    <Link href="/servicios/mantenimiento" className="block py-2 text-gray-300 hover:text-white hover:bg-[#fa6704]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Mantenimiento</Link>
-                    <Link href="/servicios/financiamiento" className="block py-2 text-gray-300 hover:text-white hover:bg-[#fa6704]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Financiamiento</Link>
-                    <Link href="/servicios/estado-cuenta" className="block py-2 text-gray-300 hover:text-white hover:bg-[#fa6704]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Estado de Cuenta</Link>
+                    <Link href="/servicios/mantenimiento" className="block py-2 text-gray-300 hover:text-white hover:bg-[#F57B20]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Mantenimiento</Link>
+                    <Link href="/servicios/financiamiento" className="block py-2 text-gray-300 hover:text-white hover:bg-[#F57B20]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Financiamiento</Link>
+                    <Link href="/servicios/estado-cuenta" className="block py-2 text-gray-300 hover:text-white hover:bg-[#F57B20]/20 rounded transition-colors px-2" onClick={() => setIsMenuOpen(false)}>Estado de Cuenta</Link>
                   </div>
                 </div>
                 <Link
                   href="/productos"
-                  className="text-white hover:text-[#fa6704] transition-colors py-2"
+                  className="text-white hover:text-[#F57B20] transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Patio de Motos
+                  Patio de Vehículos
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-white hover:text-[#fa6704] transition-colors py-2"
+                  className="text-white hover:text-[#F57B20] transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog

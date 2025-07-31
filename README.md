@@ -6,7 +6,7 @@
 - `/lib/data/products.ts` - Base de datos centralizada de productos
 - `/app/productos/page.tsx` - Página principal de productos con filtros
 - `/app/productos/[slug]/page.tsx` - Plantilla dinámica de producto
-- `/app/blog/page.tsx` - Blog con artículos sobre motos
+- `/app/blog/page.tsx` - Blog con artículos sobre vehículos
 - `/components/` - Componentes reutilizables de la UI
 
 ## Sistema de Productos
@@ -61,7 +61,7 @@ const productosCategoria = getProductsByCategory('Paseo');
 - Debe ser único para cada producto
 
 ## Blog
-- 4 artículos sobre motos
+- 4 artículos sobre vehículos
 - Diseño con fondo blanco y textos en negro
 - Hero con título "Blog"
 - Categorías: Consejos, Mantenimiento, Accesorios

@@ -6,16 +6,16 @@ import { Badge } from '@/components/ui/badge'
 import { CreditCard, Calculator, FileText, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Financiamiento de Motocicletas | Racing Motos Loja',
-  description: 'Financia tu motocicleta con las mejores tasas y condiciones en Loja, Ecuador. Crédito directo, sin intermediarios.',
-  keywords: 'financiamiento motocicletas, crédito para motos, Racing Motos Loja, préstamo motos Ecuador',
+  title: 'Financiamiento de Vehículos | UsadosLoja.com Loja',
+  description: 'Financia tu vehículo con las mejores tasas y condiciones en Loja, Ecuador. Crédito directo, sin intermediarios.',
+  keywords: 'financiamiento vehículos, crédito para vehículos, UsadosLoja.com Loja, préstamo vehículos Ecuador',
 }
 
 export default function FinanciamientoPage() {
   const planes = [
     {
       titulo: "Plan Básico",
-      descripcion: "Ideal para motos de trabajo y transporte",
+      descripcion: "Ideal para vehículos de trabajo y transporte",
       entrada: "20%",
       plazo: "24 meses",
       tasa: "12% anual",
@@ -23,7 +23,7 @@ export default function FinanciamientoPage() {
     },
     {
       titulo: "Plan Premium",
-      descripcion: "Para motos deportivas y de alta gama",
+      descripcion: "Para vehículos deportivas y de alta gama",
       entrada: "30%",
       plazo: "36 meses",
       tasa: "10% anual",
@@ -56,10 +56,10 @@ export default function FinanciamientoPage() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Financia tu Moto de Ensueño
+                Financia tu Vehículo de Ensueño
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Obtén tu motocicleta con las mejores condiciones de financiamiento en Loja. Tasas preferenciales y proceso rápido.
+                Obtén tu vehículo con las mejores condiciones de financiamiento en Loja. Tasas preferenciales y proceso rápido.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="bg-racing-yellow text-racing-blue hover:bg-racing-yellow/90">
@@ -73,7 +73,7 @@ export default function FinanciamientoPage() {
             <div className="relative">
               <Image
                 src="/images/financiamiento-hero.jpg"
-                alt="Financiamiento de motocicletas Racing Motos"
+                alt="Financiamiento de vehículos UsadosLoja.com"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-2xl"
@@ -146,7 +146,7 @@ export default function FinanciamientoPage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Requisitos Simples</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Proceso de aprobación rápido con requisitos mínimos para que obtengas tu moto lo antes posible.
+                Proceso de aprobación rápido con requisitos mínimos para que obtengas tu vehículo lo antes posible.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {requisitos.map((requisito, index) => (
@@ -209,7 +209,7 @@ export default function FinanciamientoPage() {
       {/* CTA Section */}
       <section className="py-16 bg-racing-blue text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Listo para financiar tu moto?</h2>
+          <h2 className="text-3xl font-bold mb-4">¿Listo para financiar tu vehículo?</h2>
           <p className="text-xl mb-8 text-blue-100">
             Contáctanos y obtén una pre-aprobación en minutos
           </p>
@@ -226,4 +226,3 @@ export default function FinanciamientoPage() {
     </div>
   )
 }
-

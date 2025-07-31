@@ -4,40 +4,48 @@ import React, { useState } from "react";
 
 const articulos = [
   {
-    titulo: "Los 5 Mejores Modelos de Motos para Iniciar en el Mundo de las Dos Ruedas",
-    descripcion: "Descubre los modelos ideales para principiantes que buscan comodidad, seguridad y buen rendimiento en su primera moto.",
-    imagen: "/images/motos_grupo1.jpg",
-    slug: "mejores-motos-principiantes",
+    titulo: "Guía para Comprar tu Primer Auto Usado",
+    descripcion: "¿Pensando en comprar tu primer auto? Te guiamos en el proceso para que tomes la mejor decisión.",
+    imagen: "/images/Imagenes para artículos/articulo_auto.jpg",
+    slug: "guia-comprar-primer-auto-usado",
     categoria: "Consejos",
     leidos: 245,
   },
   {
-    titulo: "Mantenimiento Básico que Toda Moto Necesita",
-    descripcion: "Aprende los cuidados esenciales para mantener tu moto en perfecto estado y alargar su vida útil con estos sencillos pasos.",
-    imagen: "/images/Taller_motos1.jpg",
-    slug: "mantenimiento-basico-motos",
-    categoria: "Mantenimiento",
+    titulo: "Las Mejores Camionetas para el Trabajo y la Aventura",
+    descripcion: "Descubre las camionetas más resistentes y versátiles del mercado, ideales para cualquier terreno.",
+    imagen: "/images/Imagenes para artículos/articulo_camionetas.jpg",
+    slug: "mejores-camionetas-trabajo-aventura",
+    categoria: "Consejos",
     leidos: 189,
   },
   {
-    titulo: "Equipamiento Esencial para Viajes en Moto",
-    descripcion: "Todo lo que necesitas saber para preparar tu próxima aventura en moto con seguridad y comodidad.",
-    imagen: "/images/Accesorios_Motos1.jpg",
-    slug: "equipamiento-viajes-moto",
-    categoria: "Accesorios",
+    titulo: "Jeep: El Espíritu de la Aventura Todoterreno",
+    descripcion: "Explora la historia y los modelos más icónicos de Jeep, el rey del 4x4.",
+    imagen: "/images/Imagenes para artículos/articulo_jeep.jpg",
+    slug: "jeep-espiritu-aventura-todoterreno",
+    categoria: "Consejos",
     leidos: 156,
   },
   {
-    titulo: "Cómo Elegir la Moto Perfecta para tu Estilo de Vida",
-    descripcion: "Guía completa para encontrar la moto que mejor se adapte a tus necesidades, ya sea para ciudad, carretera o aventura.",
-    imagen: "/images/motos_grupo2.jpg",
-    slug: "elegir-moto-perfecta",
-    categoria: "Consejos",
+    titulo: "¿Necesitas una Plataforma Elevadora? Guía de Compra",
+    descripcion: "Todo lo que necesitas saber antes de comprar o alquilar una plataforma elevadora para tus proyectos.",
+    imagen: "/images/Imagenes para artículos/articulo_plataformas.jpg",
+    slug: "guia-compra-plataforma-elevadora",
+    categoria: "Maquinaria",
     leidos: 203,
+  },
+  {
+    titulo: "Tractores: La Herramienta Esencial para el Campo",
+    descripcion: "Conoce los tipos de tractores y cómo elegir el más adecuado para tus necesidades agrícolas.",
+    imagen: "/images/Imagenes para artículos/articulo_tractores.jpg",
+    slug: "tractores-herramienta-esencial-campo",
+    categoria: "Maquinaria",
+    leidos: 120,
   },
 ];
 
-const categorias = ["Todos", "Consejos", "Mantenimiento", "Accesorios"];
+const categorias = ["Todos", "Consejos", "Maquinaria"];
 
 export default function BlogPage() {
   const [busqueda, setBusqueda] = useState("");
@@ -59,7 +67,7 @@ export default function BlogPage() {
       <div className="bg-[#f9f9f9] py-16 md:py-20 mb-12 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-3">Blog</h1>
-          <p className="text-lg text-gray-700 max-w-2xl">Consejos, noticias y tendencias en el mundo de las motos</p>
+          <p className="text-lg text-gray-700 max-w-2xl">Consejos, noticias y tendencias en el mundo de los vehículos</p>
         </div>
       </div>
       
@@ -135,4 +143,4 @@ export default function BlogPage() {
       </div>
     </main>
   );
-} 
+}

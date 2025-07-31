@@ -1,0 +1,44 @@
+✅ Trabajo Completado:
+1. Repositorio clonado y modificado:
+Clonado desde tu GitHub original
+Toda la estructura preservada y adaptada
+2. Contenido actualizado:
+"Motos" → "Vehículos usados"
+"Racing Motos" → "UsadosLoja.com"
+Navegación actualizada: "Patio de Vehículos"
+3. Nuevo branding aplicado:
+Color primario: #F57B20 (naranja)
+Color hover: #D96518
+Tipografía: Inter, sans-serif
+Estilos según tu especificación JSON
+4. Estructura organizada:
+Carpetas creadas para imágenes:
+/vehiculos_usados/autos
+/vehiculos_usados/camionetas
+/vehiculos_usados/motos_usadas
+5. Sitio funcionando:
+Servidor de desarrollo corriendo
+Validado visualmente
+Todos los cambios aplicados correctamente
+📦 Archivos entregados:
+Proyecto completo comprimido (ecommerce_usadosloja.tar.gz)
+Reporte de validación con todos los cambios realizados
+El sitio web está listo para que subas las imágenes de tu inventario de vehículos usados. La estructura está completamente preparada para tu negocio de patio de carros con el nombre UsadosLoja.com.
+
+Navega a la carpeta del proyecto:
+Abre tu terminal o línea de comandos y navega hasta la carpeta donde descomprimiste el proyecto. Por ejemplo, si lo descomprimiste en una carpeta llamada ecommerce_usadosloja:
+bash
+cd ecommerce_usadosloja
+Instala las dependencias:
+Una vez dentro de la carpeta del proyecto, instala todas las dependencias necesarias. Es posible que necesites usar --legacy-peer-deps si encuentras errores de compatibilidad, como ocurrió durante el desarrollo:
+bash
+npm install --legacy-peer-deps
+Asegúrate de tener Node.js y npm instalados en tu sistema. Puedes verificarlo con node -v y npm -v.
+Inicia el servidor de desarrollo:
+Finalmente, inicia el servidor de desarrollo de Next.js:
+bash
+npm run dev
+Accede al sitio web:
+Una vez que el servidor se inicie (verás un mensaje como "Ready in..." y una URL), abre tu navegador web y visita la dirección que te indique la terminal, que generalmente será:
+http://localhost:3000
+¡Con estos pasos deberías poder ver el sitio web de UsadosLoja.com funcionando en tu máquina local!

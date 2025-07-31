@@ -39,14 +39,14 @@ type FinanciamientoPorTipo = {
 };
 
 export default function FinanciamientoPage() {
-  const [activeTab, setActiveTab] = useState('motos')
+  const [activeTab, setActiveTab] = useState('vehículos')
 
   const financiamientos: FinanciamientoPorTipo = {
-    motos: [
+    vehículos: [
       {
         id: 1,
-        titulo: "Crédito para Motos Nuevas",
-        descripcion: "Financiamiento especial para motos 0km con las mejores tasas del mercado",
+        titulo: "Crédito para Vehículos Nuevos",
+        descripcion: "Financiamiento especial para vehículos 0km con las mejores tasas del mercado",
         tasa: "Desde 8.9%",
         plazo: "Hasta 60 meses",
         montoMin: 3000,
@@ -57,13 +57,13 @@ export default function FinanciamientoPage() {
           "Referencias personales",
           "Anticipo del 20%"
         ],
-        icon: <CreditCard className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos1.jpg'
+        icon: <CreditCard className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/compra_carros.jpg'
       },
       {
         id: 2,
-        titulo: "Crédito para Motos Usadas",
-        descripcion: "Financiamiento para motos seminuevas con excelentes condiciones",
+        titulo: "Crédito para Vehículos Usados",
+        descripcion: "Financiamiento para vehículos seminuevas con excelentes condiciones",
         tasa: "Desde 10.5%",
         plazo: "Hasta 48 meses",
         montoMin: 1500,
@@ -74,8 +74,8 @@ export default function FinanciamientoPage() {
           "Referencias personales y comerciales",
           "Anticipo del 30%"
         ],
-        icon: <DollarSign className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos2.jpg'
+        icon: <DollarSign className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/compra_carros2.jpg'
       },
       {
         id: 3,
@@ -91,15 +91,15 @@ export default function FinanciamientoPage() {
           "Referencias personales",
           "Anticipo del 20%"
         ],
-        icon: <BadgeCheck className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/financiamiento_motos3.jpg'
+        icon: <BadgeCheck className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/compra_carros3.jpg'
       }
     ],
     planes: [
       {
         id: 4,
         titulo: "Plan Ahorro Programado",
-        descripcion: "Ahorra para tu moto con cuotas fijas y obtén descuentos especiales",
+        descripcion: "Ahorra para tu vehículo con cuotas fijas y obtén descuentos especiales",
         tasa: "0% de interés",
         plazo: "6 a 12 meses",
         montoMin: 50,
@@ -110,8 +110,8 @@ export default function FinanciamientoPage() {
           "Cuenta de ahorros activa",
           "Depósito inicial según plan"
         ],
-        icon: <Percent className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta.jpg'
+        icon: <Percent className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/cotiza1.jpg'
       },
       {
         id: 5,
@@ -127,13 +127,13 @@ export default function FinanciamientoPage() {
           "Referencias comerciales",
           "Anticipo del 20%"
         ],
-        icon: <FileText className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/tarjeta_Credito1.jpg'
+        icon: <FileText className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/cotiza2.jpg'
       },
       {
         id: 6,
         titulo: "Renovación de Flota",
-        descripcion: "Actualiza tu flota de motos con condiciones especiales para empresas",
+        descripcion: "Actualiza tu flota de vehículos con condiciones especiales para empresas",
         tasa: "Desde 7.9%",
         plazo: "Hasta 60 meses",
         montoMin: 10000,
@@ -144,8 +144,8 @@ export default function FinanciamientoPage() {
           "Referencias bancarias",
           "Anticipo del 25%"
         ],
-        icon: <ShieldCheck className="h-10 w-10 text-[#fa6704]" />,
-        bgImage: '/images/estado_cuenta2.jpg'
+        icon: <ShieldCheck className="h-10 w-10 text-[#F57B20]" />,
+        bgImage: '/images/Financiamiento/cotiza3.jpg'
       }
     ]
   }
@@ -164,43 +164,43 @@ export default function FinanciamientoPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
           <div className="absolute bottom-0 left-0 right-0 p-4">
             <h3 className="text-xl font-bold text-white mb-1">{financiamiento.titulo}</h3>
-            <p className="text-gray-200 text-sm line-clamp-2">{financiamiento.descripcion}</p>
+            <p className="text-white text-sm line-clamp-2">{financiamiento.descripcion}</p>
           </div>
         </div>
       </div>
       <div className="p-4">
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <p className="text-sm text-gray-600">Tasa de interés</p>
-            <p className="font-semibold text-gray-900">{financiamiento.tasa}</p>
+            <p className="text-sm text-white">Tasa de interés</p>
+            <p className="font-semibold text-white">{financiamiento.tasa}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">Plazo máximo</p>
-            <p className="font-semibold text-gray-900">{financiamiento.plazo}</p>
+            <p className="text-sm text-white">Plazo máximo</p>
+            <p className="font-semibold text-white">{financiamiento.plazo}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">Monto mínimo</p>
-            <p className="font-semibold text-gray-900">${financiamiento.montoMin.toLocaleString()}</p>
+            <p className="text-sm text-white">Monto mínimo</p>
+            <p className="font-semibold text-white">${financiamiento.montoMin.toLocaleString()}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">Monto máximo</p>
-            <p className="font-semibold text-gray-900">${financiamiento.montoMax.toLocaleString()}</p>
+            <p className="text-sm text-white">Monto máximo</p>
+            <p className="font-semibold text-white">${financiamiento.montoMax.toLocaleString()}</p>
           </div>
         </div>
         
         <div className="mb-4">
           <h4 className="font-semibold text-gray-800 mb-2">Requisitos:</h4>
-          <ul className="space-y-1 text-sm text-gray-600">
+          <ul className="space-y-1 text-sm text-white">
             {financiamiento.requisitos.map((item, i) => (
               <li key={i} className="flex items-start">
-                <CheckCircle className="w-4 h-4 text-[#fa6704] mt-0.5 mr-2 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-[#F57B20] mt-0.5 mr-2 flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
         
-        <Button className="w-full bg-[#fa6704] hover:bg-[#e65c00] text-white">
+        <Button className="w-full bg-[#F57B20] hover:bg-[#D96518] text-white">
           <FileText className="w-4 h-4 mr-2" />
           Solicitar Financiamiento
         </Button>
@@ -211,16 +211,16 @@ export default function FinanciamientoPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <HeroSection
-        imagen="/images/financiamiento_motos1.jpg"
-        titulo="Financiamiento para tu Moto"
-        subtitulo="Obtén la moto de tus sueños con nuestras opciones de financiamiento flexibles y tasas competitivas. Aprobación rápida y trámites sencillos en Loja, Ecuador."
+        imagen="/images/Exterior de la empresa/local_exterior1.jpg"
+        titulo="Financiamiento para tu Vehículo"
+        subtitulo="Obtén el vehículo de tus sueños con nuestras opciones de financiamiento flexibles y tasas competitivas. Aprobación rápida y trámites sencillos en Loja, Ecuador."
         overlayClassName="bg-black/60"
       >
         <div className="w-full md:w-auto mt-8">
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-[#F57B20] hover:bg-[#D96518] text-white font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <FileText className="mr-2 h-5 w-5" />
               Solicitar Financiamiento
@@ -248,22 +248,22 @@ export default function FinanciamientoPage() {
           </div>
 
           <Tabs 
-            defaultValue="motos" 
+            defaultValue="vehículos" 
             className="w-full"
             onValueChange={(value) => setActiveTab(value)}
           >
             <div className="flex justify-center mb-8">
               <TabsList className="bg-gray-100 p-1 rounded-lg">
                 <TabsTrigger 
-                  value="motos" 
-                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'motos' ? 'bg-white shadow-sm text-[#fa6704]' : 'text-gray-600 hover:text-gray-900'}`}
+                  value="vehículos" 
+                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'vehículos' ? 'bg-white shadow-sm text-[#F57B20]' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <CreditCard className="w-4 h-4 mr-2" />
                   Crédito para Motos
                 </TabsTrigger>
                 <TabsTrigger 
                   value="planes" 
-                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'planes' ? 'bg-white shadow-sm text-[#fa6704]' : 'text-gray-600 hover:text-gray-900'}`}
+                  className={`px-6 py-2 rounded-md transition-colors ${activeTab === 'planes' ? 'bg-white shadow-sm text-[#F57B20]' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <DollarSign className="w-4 h-4 mr-2" />
                   Planes Especiales
@@ -294,7 +294,7 @@ export default function FinanciamientoPage() {
                 <div className="h-full relative">
                   <Image
                     className="h-full w-full object-cover"
-                    src="/images/financiamiento_beneficios.jpg"
+                    src="/images/Financiamiento/financiamiento_carros.jpg"
                     alt="Beneficios de financiamiento"
                     width={600}
                     height={400}
@@ -303,8 +303,8 @@ export default function FinanciamientoPage() {
                 </div>
               </div>
               <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-[#fa6704] font-semibold mb-1">Beneficios Exclusivos</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Por qué financiar tu moto con nosotros?</h3>
+                <div className="uppercase tracking-wide text-sm text-[#F57B20] font-semibold mb-1">Beneficios Exclusivos</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Por qué financiar tu vehículo con nosotros?</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <CheckCircle className="h-6 w-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -324,7 +324,7 @@ export default function FinanciamientoPage() {
                     <CheckCircle className="h-6 w-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">Plazos flexibles</h4>
-                      <p className="text-gray-600">Hasta 60 meses para pagar tu moto con cuotas que se ajustan a tu presupuesto.</p>
+                      <p className="text-gray-600">Hasta 60 meses para pagar tu vehículo con cuotas que se ajustan a tu presupuesto.</p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -336,7 +336,7 @@ export default function FinanciamientoPage() {
                   </li>
                 </ul>
                 <div className="mt-6">
-                  <Button className="bg-[#fa6704] hover:bg-[#e65c00] text-white">
+                  <Button className="bg-[#F57B20] hover:bg-[#D96518] text-white">
                     Solicitar Asesoría
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -345,9 +345,9 @@ export default function FinanciamientoPage() {
             </div>
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-[#fa6704] to-[#ff8c42] rounded-2xl p-8 text-white">
+          <div className="mt-16 bg-gradient-to-r from-[#F57B20] to-[#ff8c42] rounded-2xl p-8 text-white">
             <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl font-bold mb-4">¿Listo para adquirir tu moto soñada?</h3>
+              <h3 className="text-2xl font-bold mb-4">¿Listo para adquirir tu vehículo soñada?</h3>
               <p className="text-lg mb-6 opacity-90">
                 Completa nuestro formulario de pre-aprobación en línea y recibe una respuesta en menos de 24 horas.
                 Sin compromiso y sin costo alguno.
@@ -362,7 +362,7 @@ export default function FinanciamientoPage() {
                 </Button>
                 <Button 
                   variant="secondary" 
-                  className="bg-white text-[#fa6704] hover:bg-gray-100"
+                  className="bg-white text-[#F57B20] hover:bg-gray-100"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Llamar a un Asesor

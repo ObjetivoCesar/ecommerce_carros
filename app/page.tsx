@@ -14,20 +14,20 @@ import { HeroSlider } from '@/components/hero-slider';
 // Hero slides - Contenido del slider
 const heroSlides = [
   {
-    image: '/images/Hero2.jpg',
+    image: '/images/Exterior de la empresa/local_exterior1.jpg',
     title: (
       <>
-        Las Mejores <span className="bg-white/30 backdrop-blur-sm rounded-lg px-2 py-0.5 font-extrabold text-racing-blue shadow-md">Motocicletas</span> en{' '}
+        Los Mejores <span className="bg-white/30 backdrop-blur-sm rounded-lg px-2 py-0.5 font-extrabold text-racing-blue shadow-md">Vehículos</span> en{' '}
         <span className="bg-white/30 backdrop-blur-sm rounded-lg px-2 py-0.5 font-extrabold text-racing-blue shadow-md">Loja</span>
       </>
     ),
-    subtitle: 'Tu concesionario de confianza en Racing Motos',
-    buttonText: 'Ver Motos',
+    subtitle: 'Tu concesionario de confianza en UsadosLoja.com',
+    buttonText: 'Ver Vehículos',
     buttonHref: '/productos',
     buttonVariant: 'default',
   },
   {
-    image: '/images/Hero3.jpg',
+    image: '/images/Interior de la empresa/consecionario_interno.jpg',
     title: 'Financiamiento Especial',
     subtitle: 'Hasta 36 meses de plazo y tasas preferenciales',
     buttonText: 'Solicitar Financiamiento',
@@ -35,15 +35,15 @@ const heroSlides = [
     buttonVariant: 'outline',
   },
   {
-    image: '/images/Hero4.jpg',
+    image: '/images/Exterior de la empresa/local_exterior2.jpg',
     title: 'Mantenimiento Profesional',
-    subtitle: 'Servicio técnico especializado para tu moto',
+    subtitle: 'Servicio técnico especializado para tu vehículo',
     buttonText: 'Agendar Cita',
     buttonHref: '/servicios/mantenimiento',
     buttonVariant: 'default',
   },
   {
-    image: '/images/Hero5.jpg',
+    image: '/images/Interior de la empresa/consecionario2.jpg',
     title: 'Repuestos Originales',
     subtitle: 'Garantía y calidad para tu vehículo',
     buttonText: 'Ver Repuestos',
@@ -52,38 +52,54 @@ const heroSlides = [
   },
 ];
 
-// Promociones
+import { productos } from '@/lib/data/products';
+
+// Promociones - Usando productos reales
 const promociones = [
-  { id: 1, titulo: 'Motos Deportivas en Oferta', descripcion: 'Aprovecha 15% de descuento en motos deportivas', imagen: '/images/motos_grupo1.jpg', href: '/productos/motos-deportivas' },
-  { id: 2, titulo: 'Financiamiento 0% Interés', descripcion: 'Financia tu moto sin intereses por 12 meses', imagen: '/images/financiamiento_motos1.jpg', href: '/servicios/financiamiento' },
-  { id: 3, titulo: 'Mantenimiento Gratuito', descripcion: 'Primer mantenimiento gratis con la compra', imagen: '/images/Taller_motos1.jpg', href: '/servicios/mantenimiento' },
-  { id: 4, titulo: 'Motos de Trabajo', descripcion: 'Motos ideales para trabajo y transporte', imagen: '/images/motos_grupo2.jpg', href: '/productos/motos-trabajo' },
-  { id: 5, titulo: 'Trámites Incluidos', descripcion: 'Matriculación y trámites sin costo adicional', imagen: '/images/Accesorios_Motos1.jpg', href: '/servicios/tramites' },
-  { id: 6, titulo: 'Motos Usadas Certificadas', descripcion: 'Motos usadas con garantía y revisión técnica', imagen: '/images/motos_grupo3.jpg', href: '/productos/motos-usadas' },
+  productos['auto-1'],
+  productos['camioneta-3'],
+  productos['camion-2'],
+  productos['maquinaria-2'],
+  productos['auto-3'],
+  productos['camioneta-1'],
 ];
 
 // Blog
 const blog = [
   {
     id: 1,
-    titulo: '¿Dónde comprar un vehículo con garantía en Loja?',
-    resumen: 'Descubre por qué Racing Motos es tu mejor opción para comprar motocicletas con garantía completa.',
-    imagen: '/images/motos_grupo1.jpg',
-    slug: 'donde-comprar-vehiculo-garantia-loja',
+    titulo: 'Guía para Comprar tu Primer Auto Usado',
+    resumen: '¿Pensando en comprar tu primer auto? Te guiamos en el proceso para que tomes la mejor decisión.',
+    imagen: '/images/Imagenes para artículos/articulo_auto.jpg',
+    slug: 'guia-comprar-primer-auto-usado',
   },
   {
     id: 2,
-    titulo: 'Mejores motos para trabajo en Ecuador 2024',
-    resumen: 'Guía completa de las motocicletas más eficientes para trabajo y transporte en Ecuador.',
-    imagen: '/images/Motodetrabajo1.jpg',
-    slug: 'mejores-motos-trabajo-ecuador-2024',
+    titulo: 'Las Mejores Camionetas para el Trabajo y la Aventura',
+    resumen: 'Descubre las camionetas más resistentes y versátiles del mercado, ideales para cualquier terreno.',
+    imagen: '/images/Imagenes para artículos/articulo_camionetas.jpg',
+    slug: 'mejores-camionetas-trabajo-aventura',
   },
   {
     id: 3,
-    titulo: 'Financiamiento de motocicletas: todo lo que debes saber',
-    resumen: 'Conoce las opciones de crédito y financiamiento disponibles para tu nueva motocicleta.',
-    imagen: '/images/financiamiento_motos2.jpg',
-    slug: 'financiamiento-motocicletas-guia-completa',
+    titulo: 'Jeep: El Espíritu de la Aventura Todoterreno',
+    resumen: 'Explora la historia y los modelos más icónicos de Jeep, el rey del 4x4.',
+    imagen: '/images/Imagenes para artículos/articulo_jeep.jpg',
+    slug: 'jeep-espiritu-aventura-todoterreno',
+  },
+  {
+    id: 4,
+    titulo: '¿Necesitas una Plataforma Elevadora? Guía de Compra',
+    resumen: 'Todo lo que necesitas saber antes de comprar o alquilar una plataforma elevadora para tus proyectos.',
+    imagen: '/images/Imagenes para artículos/articulo_plataformas.jpg',
+    slug: 'guia-compra-plataforma-elevadora',
+  },
+  {
+    id: 5,
+    titulo: 'Tractores: La Herramienta Esencial para el Campo',
+    resumen: 'Conoce los tipos de tractores y cómo elegir el más adecuado para tus necesidades agrícolas.',
+    imagen: '/images/Imagenes para artículos/articulo_tractores.jpg',
+    slug: 'tractores-herramienta-esencial-campo',
   },
 ];
 
@@ -92,27 +108,27 @@ const showrooms = [
   { 
     id: 1, 
     sucursal: 'Sucursal Centro', 
-    empresa: 'Racing Motos', 
+    empresa: 'UsadosLoja.com', 
     direccion: 'Av. Universitaria y Lourdes, Loja', 
-    imagen: '/images/Fotos Hero/showroom1.jpg', 
+    imagen: '/images/showroom/1.jpg', 
     maps: 'https://goo.gl/maps/...', 
     cotiza: '#contacto' 
   },
   { 
     id: 2, 
     sucursal: 'Sucursal Norte', 
-    empresa: 'Racing Motos', 
+    empresa: 'UsadosLoja.com', 
     direccion: 'Av. Emiliano Ortega y 8 de Diciembre, Loja', 
-    imagen: '/images/Fotos Hero/showroom2.jpg', 
+    imagen: '/images/showroom/2.jpg', 
     maps: '#', 
     cotiza: '#contacto' 
   },
   { 
     id: 3, 
     sucursal: 'Taller de Servicio', 
-    empresa: 'Racing Motos', 
+    empresa: 'UsadosLoja.com', 
     direccion: 'Sector La Tebaida, Loja', 
-    imagen: '/images/Fotos Hero/showroom3.jpg', 
+    imagen: '/images/showroom/3.jpg', 
     maps: '#', 
     cotiza: '#contacto' 
   },
@@ -164,7 +180,7 @@ export default function HomePage() {
         className="shadow-2xl"
       />
       {/* PARALLAX/IMAGEN FIJA */}
-      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/Imagen_de_fondo1.jpg')" }} />
+      <section className="relative w-full h-[40vh] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/Heros/Hero2.jpg')" }} />
 
       {/* QUIÉNES SOMOS */}
       <section className="w-full py-20 md:py-32 text-white" style={{ backgroundColor: '#040404' }}>
@@ -175,7 +191,7 @@ export default function HomePage() {
               QUIÉNES<br/>SOMOS
             </h2>
             <p className="text-lg text-gray-100 mb-10 max-w-2xl leading-relaxed">
-              <span className="block mb-4">Racing Motos es una empresa familiar con más de 15 años de experiencia en el sector motociclístico de Loja, Ecuador. Nos especializamos en la venta de motocicletas nuevas y usadas, servicios de mantenimiento, financiamiento y gestión de trámites vehiculares.</span>
+              <span className="block mb-4">UsadosLoja.com es una empresa familiar con más de 15 años de experiencia en el sector motociclístico de Loja, Ecuador. Nos especializamos en la venta de motocicletas nuevas y usadas, servicios de mantenimiento, financiamiento y gestión de trámites vehiculares.</span>
               <span className="block">Somos distribuidores autorizados de las mejores marcas de motocicletas, ofreciendo productos de calidad con garantía y el mejor servicio postventa de la región.</span>
             </p>
             <Button asChild className="bg-racing-yellow hover:bg-racing-yellow/90 text-racing-blue font-bold px-10 py-4 rounded-full text-base shadow-lg transition-colors duration-200">
@@ -188,8 +204,8 @@ export default function HomePage() {
             {/* Imagen decorativa */}
             <div className="absolute left-[-40px] bottom-[-40px] w-[200px] h-[160px] rounded-xl overflow-hidden shadow-2xl border-4 border-white z-10 hidden md:block">
               <Image 
-                src="/images/vertical 1.jpg" 
-                alt="Ambiente de Racing Motos" 
+                src="/images/Exterior de la empresa/local_exterior1.jpg" 
+                alt="Ambiente de UsadosLoja.com" 
                 width={200}
                 height={160}
                 className="object-cover w-full h-full"
@@ -200,8 +216,8 @@ export default function HomePage() {
             {/* Video */}
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl transform transition-transform hover:scale-[1.02] hover:shadow-racing-yellow/20 z-0">
               <iframe
-                src="https://www.youtube.com/embed/Gm5A3Ir9qv0"
-                title="Conoce más sobre Racing Motos"
+                src="https://www.youtube.com/embed/a6mZN9OJddU"
+                title="Conoce más sobre UsadosLoja.com"
                 className="w-full h-full object-cover"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -220,15 +236,15 @@ export default function HomePage() {
                   <Card className="overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col min-w-[260px] max-w-[350px] mx-auto">
                     <div className="relative w-full h-56 md:h-64">
                       <span className="absolute top-3 left-3 bg-marmolinas-yellow text-marmolinas-blue text-xs font-bold px-3 py-1 rounded-full shadow z-10">Oferta</span>
-                      <Image src={promo.imagen} alt={promo.titulo} fill className="object-cover rounded-t-2xl" />
+                      <Image src={promo.imagen} alt={promo.nombre} fill className="object-cover rounded-t-2xl" />
               </div>
                     <CardHeader className="flex-1 flex flex-col justify-between py-4">
-                      <CardTitle className="text-marmolinas-blue text-xl text-center leading-tight mb-1">{promo.titulo}</CardTitle>
-                      <CardDescription className="text-gray-600 text-base text-center mb-2">{promo.descripcion}</CardDescription>
+                      <CardTitle className="text-marmolinas-blue text-xl text-center leading-tight mb-1">{promo.nombre}</CardTitle>
+                      <CardDescription className="text-white text-base text-center mb-2">{promo.descripcion}</CardDescription>
               </CardHeader>
                     <CardContent className="pt-0 pb-6 flex flex-col items-center">
                       <Button asChild className="bg-marmolinas-blue text-white w-3/4 rounded-full text-base py-3 shadow-lg hover:scale-105 transition-transform">
-                  <Link href={promo.href}>Ver Oferta</Link>
+                  <Link href={`/productos/${promo.id}`}>Ver Detalles</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -247,7 +263,7 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/images/imagen_de_fondo_2.jpg"
+            src="/images/Heros/Hero3.jpg"
             alt="Fondo Nuestros Servicios"
             className="w-full h-full object-cover object-center"
             draggable="false"
@@ -264,7 +280,7 @@ export default function HomePage() {
             </TabsList>
             <TabsContent value="venta">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                {["/images/Taller_motos1.jpg","/images/Taller_motos2.jpg","/images/Taller_motos3.jpg"].map((src, i) => (
+                {["/images/autos/carros_en_fila.jpg","/images/autos/carros_en_fila1.jpg","/images/autos/carros_en_fila2.jpg"].map((src, i) => (
                   <Dialog key={src+"-venta"}>
                     <DialogTrigger asChild>
                       <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer">
@@ -292,7 +308,7 @@ export default function HomePage() {
             </TabsContent>
             <TabsContent value="pulido">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                {["/images/financiamiento_motos1.jpg","/images/financiamiento_motos2.jpg","/images/financiamiento_motos3.jpg"].map((src, i) => (
+                {["/images/Financiamiento/compra_carros.jpg","/images/Financiamiento/compra_carros2.jpg","/images/Financiamiento/compra_carros3.jpg"].map((src, i) => (
                   <Dialog key={src+"-pulido"}>
                     <DialogTrigger asChild>
                       <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer">
@@ -320,7 +336,7 @@ export default function HomePage() {
             </TabsContent>
             <TabsContent value="resina">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                {["/images/tramitesmotos1.jpeg","/images/tramitesmotos2.webp","/images/tramitesmotos3.jpeg"].map((src, i) => (
+                {["/images/Financiamiento/cotiza1.jpg","/images/Financiamiento/cotiza2.jpg","/images/Financiamiento/cotiza3.jpg"].map((src, i) => (
                   <Dialog key={src+"-resina"}>
                     <DialogTrigger asChild>
                       <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer">
@@ -368,7 +384,7 @@ export default function HomePage() {
                         <CardDescription className="text-gray-700 text-sm text-center mb-4">{art.resumen}</CardDescription>
                       </CardHeader>
                       <CardContent className="pt-0 px-4 pb-4">
-                        <Button asChild className="bg-[#fa6704] hover:bg-[#e65c00] text-white w-full rounded-full text-sm py-2 transition-colors">
+                        <Button asChild className="bg-[#F57B20] hover:bg-[#D96518] text-white w-full rounded-full text-sm py-2 transition-colors">
                           <Link href={`/blog/${art.slug}`}>Leer más</Link>
                         </Button>
                       </CardContent>
@@ -379,7 +395,7 @@ export default function HomePage() {
             </Carousel>
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blog.map((art) => (
+            {blog.slice(0, 3).map((art) => (
               <Card key={art.id} className="overflow-hidden flex flex-col h-full max-h-[450px] bg-white shadow-md hover:shadow-lg transition-shadow">
                 <div className="relative w-full h-64">
                   <Image src={art.imagen} alt={art.titulo} fill className="object-cover" />
@@ -389,7 +405,7 @@ export default function HomePage() {
                   <CardDescription className="text-gray-700 text-sm text-center mb-4">{art.resumen}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0 px-4 pb-4">
-                  <Button asChild className="bg-[#fa6704] hover:bg-[#e65c00] text-white w-full rounded-full text-sm py-2 transition-colors">
+                  <Button asChild className="bg-[#F57B20] hover:bg-[#D96518] text-white w-full rounded-full text-sm py-2 transition-colors">
                     <Link href={`/blog/${art.slug}`}>Leer más</Link>
                   </Button>
                 </CardContent>
@@ -409,7 +425,7 @@ export default function HomePage() {
               <CarouselContent>
                 {showrooms.map((show) => (
                   <CarouselItem key={show.id} className="basis-full px-2 flex justify-center">
-                    <div className="relative rounded-xl overflow-hidden shadow-xl flex flex-col justify-between min-h-[500px] w-full max-w-xs mx-auto transition-all duration-300 hover:shadow-2xl hover:shadow-[#fa6704]/20" style={{ aspectRatio: '3/5' }}>
+                    <div className="relative rounded-xl overflow-hidden shadow-xl flex flex-col justify-between min-h-[500px] w-full max-w-xs mx-auto transition-all duration-300 hover:shadow-2xl hover:shadow-[#F57B20]/20" style={{ aspectRatio: '3/5' }}>
                       <Image src={show.imagen} alt={show.sucursal} fill className="object-cover" />
                       <div className="absolute inset-0 bg-black/40" />
                       <div className="absolute top-6 left-0 w-full px-6">
@@ -428,7 +444,7 @@ export default function HomePage() {
                               <MapPin className="w-4 h-4" /> Mapa
                             </Link>
                           </Button>
-                          <Button asChild className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-bold flex-1 rounded-full" size="sm">
+                          <Button asChild className="bg-[#F57B20] hover:bg-[#D96518] text-white font-bold flex-1 rounded-full" size="sm">
                             <Link href={show.cotiza} className="flex items-center justify-center gap-1">
                               <MessageSquareText className="w-4 h-4" /> Cotiza
                             </Link>
@@ -443,7 +459,7 @@ export default function HomePage() {
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {showrooms.map((show) => (
-              <div key={show.id} className="relative rounded-xl overflow-hidden shadow-xl flex flex-col justify-between min-h-[500px] max-w-xs mx-auto transition-all duration-300 hover:shadow-2xl hover:shadow-[#fa6704]/20" style={{ aspectRatio: '3/5' }}>
+              <div key={show.id} className="relative rounded-xl overflow-hidden shadow-xl flex flex-col justify-between min-h-[500px] max-w-xs mx-auto transition-all duration-300 hover:shadow-2xl hover:shadow-[#F57B20]/20" style={{ aspectRatio: '3/5' }}>
                 <Image src={show.imagen} alt={show.sucursal} fill className="object-cover" />
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute top-6 left-0 w-full px-6">
@@ -462,7 +478,7 @@ export default function HomePage() {
                         <MapPin className="w-4 h-4" /> Mapa
                       </Link>
                     </Button>
-                    <Button asChild className="bg-[#fa6704] hover:bg-[#e65c00] text-white font-bold flex-1 rounded-full" size="sm">
+                    <Button asChild className="bg-[#F57B20] hover:bg-[#D96518] text-white font-bold flex-1 rounded-full" size="sm">
                       <Link href={show.cotiza} className="flex items-center justify-center gap-1">
                         <MessageSquareText className="w-4 h-4" /> Cotiza
                       </Link>

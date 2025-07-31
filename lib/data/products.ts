@@ -12,158 +12,150 @@ export interface Producto {
 }
 
 export const productos: { [key: string]: Producto } = {
-  // Motos de Paseo
-  "moto-paseo-1": {
-    id: "moto-paseo-1",
-    nombre: "Moto Paseo 150cc",
-    imagen: "/images/Moto_Paseo_150cc.jpg",
-    precio: 2800,
-    descripcion: "Moto de paseo 150cc, perfecta para la ciudad. Bajo consumo, fácil maniobrabilidad y diseño moderno.",
-    categoria: "Paseo"
+  // Autos
+  "auto-1": {
+    id: "auto-1",
+    nombre: "Auto Deportivo",
+    imagen: "/images/autos/carros_en_fila.jpg",
+    precio: 25000,
+    descripcion: "Auto deportivo de alta gama, con un diseño aerodinámico y un motor potente.",
+    categoria: "Autos"
   },
-  "moto-paseo-2": {
-    id: "moto-paseo-2",
-    nombre: "Moto Paseo 180cc",
-    imagen: "/images/Moto_Paseo_180cc.jpg",
-    precio: 3500,
-    descripcion: "Moto de paseo deportiva 180cc, diseño aerodinámico y gran potencia. Ideal para viajes urbanos y carretera.",
-    categoria: "Paseo"
+  "auto-2": {
+    id: "auto-2",
+    nombre: "Auto Familiar",
+    imagen: "/images/autos/carros_en_fila1.jpg",
+    precio: 20000,
+    descripcion: "Amplio y cómodo auto familiar, ideal para viajes largos y la ciudad.",
+    categoria: "Autos"
   },
-  "moto-paseo-3": {
-    id: "moto-paseo-3",
-    nombre: "Moto Paseo 200cc",
-    imagen: "/images/Moto_Paseo_180cc.jpg", // Usando la misma imagen por ahora
-    precio: 3800,
-    descripcion: "Moto de paseo 200cc con inyección electrónica. Mayor potencia y eficiencia en combustible.",
-    categoria: "Paseo"
+  "auto-3": {
+    id: "auto-3",
+    nombre: "Auto Compacto",
+    imagen: "/images/autos/carros_en_fila2.jpg",
+    precio: 15000,
+    descripcion: "Auto compacto y eficiente, perfecto para la ciudad y fácil de estacionar.",
+    categoria: "Autos"
   },
-  "moto-paseo-4": {
-    id: "moto-paseo-4",
-    nombre: "Moto Paseo 125cc",
-    imagen: "/images/Moto_Paseo_150cc.JPG",
-    precio: 2800,
-    descripcion: "Práctica moto de paseo 125cc, económica y fácil de maniobrar. Perfecta para desplazamientos diarios.",
-    categoria: "Paseo"
-  },
-
-  // Motos de Trabajo
-  "moto-trabajo-1": {
-    id: "moto-trabajo-1",
-    nombre: "Moto Trabajo 125cc",
-    imagen: "/images/Moto_Trabajo_125cc.jpg",
-    precio: 2200,
-    descripcion: "Moto de trabajo 125cc, resistente y económica. Ideal para reparto y transporte ligero.",
-    categoria: "Trabajo"
-  },
-  "moto-trabajo-2": {
-    id: "moto-trabajo-2",
-    nombre: "Moto Taxi 150cc",
-    imagen: "/images/motodetrabajotaxi1.jpg",
-    precio: 3200,
-    descripcion: "Moto taxi 150cc con estructura reforzada y mayor capacidad de carga. Perfecta para transporte público.",
-    categoria: "Trabajo"
-  },
-  "moto-trabajo-3": {
-    id: "moto-trabajo-3",
-    nombre: "Moto Cargo 200cc",
-    imagen: "/images/motodetrabajotaxi2.jpg",
-    precio: 3400,
-    descripcion: "Moto de carga 200cc con parrilla trasera reforzada. Ideal para reparto de mercancías.",
-    categoria: "Trabajo"
-  },
-  "moto-trabajo-4": {
-    id: "moto-trabajo-4",
-    nombre: "Moto Trabajo 110cc",
-    imagen: "/images/motodetrabajo3.jpg",
-    precio: 2000,
-    descripcion: "Moto de trabajo 110cc, económica y de bajo mantenimiento. Perfecta para uso comercial.",
-    categoria: "Trabajo"
+  "auto-4": {
+    id: "auto-4",
+    nombre: "Auto de Lujo",
+    imagen: "/images/autos/carros_en_fila3.jpg",
+    precio: 50000,
+    descripcion: "Lujo y confort en un solo vehículo, con la última tecnología y acabados de primera.",
+    categoria: "Autos"
   },
 
-  // EQUIPAMIENTO PILOTO
-  "equipamiento-1": {
-    id: "equipamiento-1",
-    nombre: "Kit Equipamiento Completo",
-    imagen: "/images/Kit_Equipamiento_Completo.PNG",
-    precio: 250,
-    descripcion: "Kit completo de equipamiento para motociclista que incluye casco, guantes y chaqueta con protecciones.",
-    categoria: "Equipamiento"
+  // Camionetas
+  "camioneta-1": {
+    id: "camioneta-1",
+    nombre: "Camioneta 4x4",
+    imagen: "/images/camionetas/camionetas_fila.jpg",
+    precio: 35000,
+    descripcion: "Camioneta 4x4 todo terreno, lista para la aventura y el trabajo duro.",
+    categoria: "Camionetas"
   },
-  "equipamiento-2": {
-    id: "equipamiento-2",
-    nombre: "Chaqueta Motociclista con Protección",
-    imagen: "/images/Chaqueta_Motociclista.jpg",
-    precio: 120,
-    descripcion: "Chaqueta protectora con protecciones en hombros, codos y espalda. Material resistente al agua y al viento.",
-    categoria: "Equipamiento"
+  "camioneta-2": {
+    id: "camioneta-2",
+    nombre: "Camioneta de Lujo",
+    imagen: "/images/camionetas/camionetas_fila1.jpg",
+    precio: 55000,
+    descripcion: "Lujo y potencia en una camioneta, con todas las comodidades y un diseño imponente.",
+    categoria: "Camionetas"
   },
-  "equipamiento-3": {
-    id: "equipamiento-3",
-    nombre: "Casco Integral Deportivo",
-    imagen: "/images/Casco.jpg",
-    precio: 150,
-    descripcion: "Casco integral deportivo con certificación de seguridad. Excelente aerodinámica y ventilación ajustable.",
-    categoria: "Equipamiento"
+  "camioneta-3": {
+    id: "camioneta-3",
+    nombre: "SUV Familiar",
+    imagen: "/images/camionetas/suv_fila.jpg",
+    precio: 45000,
+    descripcion: "SUV familiar con gran espacio interior y la última tecnología en seguridad.",
+    categoria: "Camionetas"
   },
-  "equipamiento-4": {
-    id: "equipamiento-4",
-    nombre: "Guantes Profesionales",
-    imagen: "/images/Guantes-Profesionales.jpg",
-    precio: 45,
-    descripcion: "Guantes profesionales para motociclista con protección en nudillos y palma. Excelente agarre y comodidad.",
-    categoria: "Equipamiento"
-  },
-
-  // ACCESORIOS PARA MOTO
-  "maleta-1": {
-    id: "maleta-1",
-    nombre: "Maleta Trasera 40L",
-    imagen: "/images/Maleta_Trasera_40L.jpg",
-    precio: 65,
-    descripcion: "Maleta impermeable para moto con capacidad de 40 litros. Fácil de instalar y muy resistente.",
-    categoria: "Accesorios"
-  },
-  "soporte-1": {
-    id: "soporte-1",
-    nombre: "Soporte para Celular",
-    imagen: "/images/Soporte_para_Celular.jpg",
-    precio: 25,
-    descripcion: "Soporte universal para celular con agarre resistente. Fácil instalación en el manubrio.",
-    categoria: "Accesorios"
-  },
-  "alarma-1": {
-    id: "alarma-1",
-    nombre: "Alarma con Inmovilizador",
-    imagen: "/images/Alarma.jpg",
-    precio: 85,
-    descripcion: "Sistema de alarma con control remoto e inmovilizador eléctrico. Protección total para tu moto.",
-    categoria: "Accesorios"
+  "camioneta-4": {
+    id: "camioneta-4",
+    nombre: "SUV de Lujo",
+    imagen: "/images/camionetas/suv_fila1.jpg",
+    precio: 65000,
+    descripcion: "El máximo lujo y confort en una SUV, con un diseño elegante y un rendimiento excepcional.",
+    categoria: "Camionetas"
   },
 
-  // OUTLET / OFERTAS
-  "outlet-1": {
-    id: "outlet-1",
-    nombre: "Moto Paseo 150cc (Outlet)",
-    imagen: "/images/Moto_Paseo_150cc_Outlet.jpg",
-    precio: 2700,
-    descripcion: "Moto de paseo 150cc en oferta. Ligeros detalles estéticos, completamente funcional. ¡Oferta por tiempo limitado!",
-    categoria: "Outlet"
+  // Camiones
+  "camion-1": {
+    id: "camion-1",
+    nombre: "Camión de Carga",
+    imagen: "/images/camiones/camiones.jpg",
+    precio: 75000,
+    descripcion: "Camión de carga pesada, ideal para transportar grandes volúmenes de mercancía.",
+    categoria: "Camiones"
   },
-  "outlet-2": {
-    id: "outlet-2",
-    nombre: "Kit Equipamiento Completo",
-    imagen: "/images/Kit_Equipamiento_Completo.jpg",
-    precio: 250,
-    descripcion: "Kit completo con casco, chaqueta y guantes. ¡Precio especial por lote! Ahorra 20%.",
-    categoria: "Outlet"
+  "camion-2": {
+    id: "camion-2",
+    nombre: "Camión Mediano",
+    imagen: "/images/camiones/camiones2.jpg",
+    precio: 60000,
+    descripcion: "Camión de carga mediana, versátil y eficiente para todo tipo de trabajo.",
+    categoria: "Camiones"
   },
-  "outlet-3": {
-    id: "outlet-3",
-    nombre: "Moto Trabajo 125cc (Exhibición)",
-    imagen: "/images/Moto_Trabajo_125cc_Exhibicion.jpg",
-    precio: 2300,
-    descripcion: "Moto de trabajo 125cc de exposición. Kilometraje mínimo. ¡Gran oportunidad!",
-    categoria: "Outlet"
+  "camion-3": {
+    id: "camion-3",
+    nombre: "Camión Ligero",
+    imagen: "/images/camiones/camiones3.jpg",
+    precio: 45000,
+    descripcion: "Camión de carga ligera, perfecto para reparto en la ciudad y distancias cortas.",
+    categoria: "Camiones"
+  },
+  "camion-4": {
+    id: "camion-4",
+    nombre: "Camión Pesado",
+    imagen: "/images/camiones/camiones4.jpg",
+    precio: 90000,
+    descripcion: "La máxima potencia y capacidad de carga en un camión, diseñado para los trabajos más exigentes.",
+    categoria: "Camiones"
+  },
+
+  // Maquinaria Pesada
+  "maquinaria-1": {
+    id: "maquinaria-1",
+    nombre: "Tractor Agrícola",
+    imagen: "/images/maquinaria pesada/maquinaria_pesada_tractor.jpg",
+    precio: 120000,
+    descripcion: "Tractor agrícola de alta potencia, ideal para todo tipo de trabajos en el campo.",
+    categoria: "Maquinaria"
+  },
+  "maquinaria-2": {
+    id: "maquinaria-2",
+    nombre: "Excavadora",
+    imagen: "/images/maquinaria pesada/maquinaria_pesada.jpg",
+    precio: 250000,
+    descripcion: "Excavadora de gran capacidad, perfecta para construcción y movimiento de tierras.",
+    categoria: "Maquinaria"
+  },
+  "maquinaria-3": {
+    id: "maquinaria-3",
+    nombre: "Cargadora Frontal",
+    imagen: "/images/maquinaria pesada/maquinaria_pesada1.jpg",
+    precio: 180000,
+    descripcion: "Cargadora frontal de gran capacidad, ideal para cargar y transportar materiales.",
+    categoria: "Maquinaria"
+  },
+  "maquinaria-4": {
+    id: "maquinaria-4",
+    nombre: "Retroexcavadora",
+    imagen: "/images/maquinaria pesada/maquinaria_pesada2.jpg",
+    precio: 150000,
+    descripcion: "Retroexcavadora versátil y eficiente, perfecta para todo tipo de trabajos de excavación.",
+    categoria: "Maquinaria"
+  },
+
+  // Otros
+  "otros-1": {
+    id: "otros-1",
+    nombre: "Plataforma Elevadora",
+    imagen: "/images/maquinaria pesada/maquinaria_pesada3.jpg",
+    precio: 80000,
+    descripcion: "Plataforma elevadora para trabajos en altura, segura y fácil de operar.",
+    categoria: "Otros"
   }
 };
 

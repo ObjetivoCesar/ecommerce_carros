@@ -1,17 +1,17 @@
-# Racing Motos - Adaptación del E-commerce
+# UsadosLoja.com - Adaptación del E-commerce
 
 ## Resumen de Cambios Realizados
 
-Este repositorio ha sido adaptado desde un e-commerce de granito y cuarzo para convertirse en un sitio web para **Racing Motos**, un concesionario de motocicletas en Loja, Ecuador.
+Este repositorio ha sido adaptado desde un e-commerce de granito y cuarzo para convertirse en un sitio web para **UsadosLoja.com**, un concesionario de motocicletas en Loja, Ecuador.
 
 ## Cambios Principales
 
 ### 1. Navegación y Estructura
-- **Header actualizado**: Cambio del nombre de la empresa a "Racing Motos"
+- **Header actualizado**: Cambio del nombre de la empresa a "UsadosLoja.com"
 - **Menú de navegación modificado**:
   - "Productos" → "Patio de Motos"
   - Servicios actualizados: Mantenimiento, Financiamiento, Trámites
-- **Colores del tema**: Actualización de la paleta de colores para Racing Motos
+- **Colores del tema**: Actualización de la paleta de colores para UsadosLoja.com
 
 ### 2. Páginas de Servicios Creadas
 Se crearon tres nuevas páginas de servicios específicas para el negocio de motocicletas:
@@ -35,8 +35,8 @@ Se crearon tres nuevas páginas de servicios específicas para el negocio de mot
 
 #### Página Principal (`/app/page.tsx`)
 - **Título principal**: "Las Mejores Motocicletas en Loja"
-- **Subtítulo**: "Tu concesionario de confianza en Racing Motos"
-- **Sección "Quiénes Somos"**: Adaptada para Racing Motos con información sobre:
+- **Subtítulo**: "Tu concesionario de confianza en UsadosLoja.com"
+- **Sección "Quiénes Somos"**: Adaptada para UsadosLoja.com con información sobre:
   - 15 años de experiencia en el sector motociclístico
   - Especialización en venta de motocicletas nuevas y usadas
   - Servicios de mantenimiento, financiamiento y trámites
@@ -66,11 +66,11 @@ Se crearon tres artículos optimizados para SEO con palabras clave transaccional
 
 #### `donde-comprar-vehiculo-garantia-loja.mdx`
 - **Título**: "¿Dónde comprar un vehículo con garantía en Loja?"
-- **Enfoque**: Posicionamiento de Racing Motos como la mejor opción
+- **Enfoque**: Posicionamiento de UsadosLoja.com como la mejor opción
 - **Contenido**: Garantía integral, servicio postventa, financiamiento, etc.
 
-#### `mejores-motos-trabajo-ecuador-2024.mdx`
-- **Título**: "Mejores Motos para Trabajo en Ecuador 2024"
+#### `mejores-vehículos-trabajo-ecuador-2024.mdx`
+- **Título**: "Mejores Vehículos para Trabajo en Ecuador 2024"
 - **Enfoque**: Motocicletas ideales para trabajo y delivery
 - **Contenido**: Análisis de modelos, características, recomendaciones
 
@@ -88,13 +88,13 @@ Se crearon tres artículos optimizados para SEO con palabras clave transaccional
 - **Promociones**: Imágenes de motocicletas y servicios
 
 #### Nuevas Imágenes Agregadas
-- `logo-racing-motos.jpg`: Logo de la empresa
+- `logo-racing-vehículos.jpg`: Logo de la empresa
 - `moto-deportiva.jpg`: Motocicleta deportiva principal
-- `motos-trabajo.jpg`: Motocicletas para trabajo
+- `vehículos-trabajo.jpg`: Motocicletas para trabajo
 - `mantenimiento-hero.jpg`: Imagen de servicios de mantenimiento
 - `financiamiento-hero.jpg`: Imagen de financiamiento
 - `tramites-hero.jpg`: Imagen de trámites
-- `garantia-motos.jpg`: Imagen de garantías
+- `garantia-vehículos.jpg`: Imagen de garantías
 - Y más imágenes específicas para cada sección
 
 ### 6. Configuración de Colores (Tailwind)
@@ -120,7 +120,7 @@ ecommerce_Granito/
 │   │   └── tramites/page.tsx              # Nueva página
 ├── blog-marmolinas/pages/
 │   ├── donde-comprar-vehiculo-garantia-loja.mdx    # Nuevo artículo
-│   ├── mejores-motos-trabajo-ecuador-2024.mdx      # Nuevo artículo
+│   ├── mejores-vehículos-trabajo-ecuador-2024.mdx      # Nuevo artículo
 │   └── financiamiento-motocicletas-guia-completa.mdx # Nuevo artículo
 ├── components/
 │   └── header.tsx                         # Navegación actualizada
@@ -206,5 +206,5 @@ Para cualquier consulta sobre la implementación o modificaciones adicionales, c
 
 ---
 
-**Racing Motos** - Tu concesionario de confianza en Loja, Ecuador.
+**UsadosLoja.com** - Tu concesionario de confianza en Loja, Ecuador.
 
