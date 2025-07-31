@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       "Encuentra los mejores vehículos usados en Loja, Ecuador. Autos, camionetas, camiones y maquinaria pesada con garantía y financiamiento.",
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://ecommerce-carros.vercel.app/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'UsadosLoja.com - Vehículos Usados',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     ],
     type: 'website',
     locale: 'es_ES',
-    url: 'https://www.usadosloja.com', // Reemplaza con tu URL real
+    url: 'https://ecommerce-carros.vercel.app/', // Reemplaza con tu URL real
   },
 }
 
