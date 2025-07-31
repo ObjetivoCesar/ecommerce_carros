@@ -58,8 +58,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://ecommerce-carros.vercel.app/images/og-image.jpg',
-        width: 720,
-        height: 1280,
+        width: 1080,
+        height: 1920,
         alt: 'UsadosLoja.com - Vehículos Usados',
       },
     ],
